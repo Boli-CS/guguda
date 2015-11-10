@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		09D9FCA254538AC3D389CE13 /* Pods_GuGuDa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91250AB7BF9F1EDFAB0F0672 /* Pods_GuGuDa.framework */; };
 		E854D8541BEDE427003FEAEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E854D8531BEDE427003FEAEB /* AppDelegate.swift */; };
-		E854D8561BEDE427003FEAEB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E854D8551BEDE427003FEAEB /* FirstViewController.swift */; };
-		E854D8581BEDE427003FEAEB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E854D8571BEDE427003FEAEB /* SecondViewController.swift */; };
 		E854D85B1BEDE427003FEAEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E854D8591BEDE427003FEAEB /* Main.storyboard */; };
 		E854D85D1BEDE427003FEAEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E854D85C1BEDE427003FEAEB /* Assets.xcassets */; };
 		E854D8601BEDE427003FEAEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E854D85E1BEDE427003FEAEB /* LaunchScreen.storyboard */; };
+		E8C552231BF0E7AB00E4C56B /* FindTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C552221BF0E7AB00E4C56B /* FindTableViewController.swift */; };
+		E8C552281BF195B600E4C56B /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C552271BF195B600E4C56B /* MessageTableViewController.swift */; };
+		E8C5522A1BF1961000E4C56B /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C552291BF1961000E4C56B /* MineViewController.swift */; };
+		E8C5522C1BF1968600E4C56B /* SportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C5522B1BF1968600E4C56B /* SportViewController.swift */; };
+		E8D41CE01BEFA1BE00E07BAD /* CircleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D41CDF1BEFA1BE00E07BAD /* CircleTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,12 +25,15 @@
 		E1EA5E5CDF960B28945304AD /* Pods-GuGuDa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuGuDa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuGuDa/Pods-GuGuDa.debug.xcconfig"; sourceTree = "<group>"; };
 		E854D8501BEDE427003FEAEB /* GuGuDa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuGuDa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E854D8531BEDE427003FEAEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E854D8551BEDE427003FEAEB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		E854D8571BEDE427003FEAEB /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		E854D85A1BEDE427003FEAEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E854D85C1BEDE427003FEAEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E854D85F1BEDE427003FEAEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E854D8611BEDE427003FEAEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8C552221BF0E7AB00E4C56B /* FindTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindTableViewController.swift; sourceTree = "<group>"; };
+		E8C552271BF195B600E4C56B /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
+		E8C552291BF1961000E4C56B /* MineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
+		E8C5522B1BF1968600E4C56B /* SportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportViewController.swift; sourceTree = "<group>"; };
+		E8D41CDF1BEFA1BE00E07BAD /* CircleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,11 @@
 		E854D8471BEDE427003FEAEB = {
 			isa = PBXGroup;
 			children = (
+				E8C552261BF1953200E4C56B /* Sport */,
+				E8C552251BF1951B00E4C56B /* Mine */,
+				E8C552241BF194ED00E4C56B /* Message */,
+				E8C552211BF0E76700E4C56B /* Find */,
+				E8D41CDE1BEFA17500E07BAD /* Circle */,
 				E854D8521BEDE427003FEAEB /* GuGuDa */,
 				E854D8511BEDE427003FEAEB /* Products */,
 				C7A0772D994EAE43DB577073 /* Pods */,
@@ -81,14 +92,57 @@
 			isa = PBXGroup;
 			children = (
 				E854D8531BEDE427003FEAEB /* AppDelegate.swift */,
-				E854D8551BEDE427003FEAEB /* FirstViewController.swift */,
-				E854D8571BEDE427003FEAEB /* SecondViewController.swift */,
 				E854D8591BEDE427003FEAEB /* Main.storyboard */,
 				E854D85C1BEDE427003FEAEB /* Assets.xcassets */,
 				E854D85E1BEDE427003FEAEB /* LaunchScreen.storyboard */,
 				E854D8611BEDE427003FEAEB /* Info.plist */,
 			);
 			path = GuGuDa;
+			sourceTree = "<group>";
+		};
+		E8C552211BF0E76700E4C56B /* Find */ = {
+			isa = PBXGroup;
+			children = (
+				E8C552221BF0E7AB00E4C56B /* FindTableViewController.swift */,
+			);
+			name = Find;
+			path = GuGuDa/Find;
+			sourceTree = "<group>";
+		};
+		E8C552241BF194ED00E4C56B /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				E8C552271BF195B600E4C56B /* MessageTableViewController.swift */,
+			);
+			name = Message;
+			path = GuGuDa/Message;
+			sourceTree = "<group>";
+		};
+		E8C552251BF1951B00E4C56B /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				E8C552291BF1961000E4C56B /* MineViewController.swift */,
+			);
+			name = Mine;
+			path = GuGuDa/Mine;
+			sourceTree = "<group>";
+		};
+		E8C552261BF1953200E4C56B /* Sport */ = {
+			isa = PBXGroup;
+			children = (
+				E8C5522B1BF1968600E4C56B /* SportViewController.swift */,
+			);
+			name = Sport;
+			path = GuGuDa/Sport;
+			sourceTree = "<group>";
+		};
+		E8D41CDE1BEFA17500E07BAD /* Circle */ = {
+			isa = PBXGroup;
+			children = (
+				E8D41CDF1BEFA1BE00E07BAD /* CircleTableViewController.swift */,
+			);
+			name = Circle;
+			path = GuGuDa/Circle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,9 +268,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E854D8581BEDE427003FEAEB /* SecondViewController.swift in Sources */,
 				E854D8541BEDE427003FEAEB /* AppDelegate.swift in Sources */,
-				E854D8561BEDE427003FEAEB /* FirstViewController.swift in Sources */,
+				E8D41CE01BEFA1BE00E07BAD /* CircleTableViewController.swift in Sources */,
+				E8C552281BF195B600E4C56B /* MessageTableViewController.swift in Sources */,
+				E8C552231BF0E7AB00E4C56B /* FindTableViewController.swift in Sources */,
+				E8C5522A1BF1961000E4C56B /* MineViewController.swift in Sources */,
+				E8C5522C1BF1968600E4C56B /* SportViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
