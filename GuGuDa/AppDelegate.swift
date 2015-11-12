@@ -16,6 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        /**
+        高德地图API所需要的key
+        */
+        print("设置高德地图API KEY")
+        AMapLocationServices.sharedServices().apiKey = "afccfdd34377ee5feb883d6abaf83e57"
+        MAMapServices.sharedServices().apiKey = "afccfdd34377ee5feb883d6abaf83e57"
         return true
     }
 

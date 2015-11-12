@@ -135,21 +135,38 @@
         <scene sceneID="0Sw-4U-RQh">
             <objects>
                 <tableViewController id="uJG-pf-gpz" customClass="FindTableViewController" customModule="GuGuDa" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="uio-lI-V8q">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="54" sectionHeaderHeight="28" sectionFooterHeight="28" id="uio-lI-V8q">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="mZg-qd-XWD">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="findTableViewCell" rowHeight="54" id="mZg-qd-XWD" customClass="FindTableViewCell" customModule="GuGuDa" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="54"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mZg-qd-XWD" id="d4l-wJ-ZqC">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="53.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="shh-xG-4zH">
+                                            <rect key="frame" x="8" y="8" width="37.5" height="37.5"/>
+                                            <animations/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbK-ho-Gww">
+                                            <rect key="frame" x="66" y="8" width="180" height="37.5"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <outlet property="findCellTitle_imageView" destination="shh-xG-4zH" id="W4F-co-qf6"/>
+                                    <outlet property="findCellTitle_label" destination="sbK-ho-Gww" id="8Od-Tj-DX4"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -158,6 +175,9 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="发现" id="YSK-FN-VBK"/>
+                    <connections>
+                        <outlet property="findTable_tableView" destination="uio-lI-V8q" id="829-xh-paI"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OgO-Se-LDn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
