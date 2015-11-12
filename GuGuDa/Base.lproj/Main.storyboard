@@ -56,6 +56,102 @@
             </objects>
             <point key="canvasLocation" x="202" y="-512"/>
         </scene>
+        <!--消息-->
+        <scene sceneID="PAB-DK-YOW">
+            <objects>
+                <tableViewController id="MdU-pL-8oa" customClass="MessageTableViewController" customModule="GuGuDa" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="jaJ-Ue-w8w">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageTableViewCell" rowHeight="70" id="OXs-80-3EN" customClass="MessageTableViewCell" customModule="GuGuDa" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="320" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OXs-80-3EN" id="wFX-5s-Drt">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UhQ-wF-IKH">
+                                            <rect key="frame" x="8" y="8" width="53.5" height="53.5"/>
+                                            <animations/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1j-R3-idZ">
+                                            <rect key="frame" x="69" y="8" width="83" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWS-DV-1N0">
+                                            <rect key="frame" x="69" y="40" width="210" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" name="windowFrameColor" catalog="System" colorSpace="catalog"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CuD-Oi-g9p">
+                                            <rect key="frame" x="270" y="10" width="42" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" name="windowFrameColor" catalog="System" colorSpace="catalog"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="messageCell_messageContent_Label" destination="PWS-DV-1N0" id="s54-jO-YbC"/>
+                                    <outlet property="messageCell_messageDate_Label" destination="CuD-Oi-g9p" id="2q1-Vg-h4j"/>
+                                    <outlet property="messageCell_messageImage_ImageView" destination="UhQ-wF-IKH" id="4Du-Jw-ufk"/>
+                                    <outlet property="messageCell_messageTarget_Label" destination="R1j-R3-idZ" id="sOH-iS-zpO"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="MdU-pL-8oa" id="VeN-Gy-mPY"/>
+                            <outlet property="delegate" destination="MdU-pL-8oa" id="bwe-I5-uam"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="消息" id="Kfj-go-V9M">
+                        <barButtonItem key="rightBarButtonItem" title="联系人" id="BA8-cy-tdc">
+                            <connections>
+                                <action selector="messageContacts_navigationBarButtonClick:" destination="MdU-pL-8oa" id="Do5-Fu-mXe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="messageContacts_navigationBarButtonItem" destination="BA8-cy-tdc" id="kkm-sR-ES5"/>
+                        <outlet property="messageTable_tableView" destination="jaJ-Ue-w8w" id="34i-xp-wuO"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C8m-Gg-P7R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1047" y="-1240"/>
+        </scene>
+        <!--消息-->
+        <scene sceneID="nbG-h4-J64">
+            <objects>
+                <navigationController id="FCj-3X-H7v" customClass="MessageNavigationViewControl" customModule="GuGuDa" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="消息" id="3Vv-CG-2Zi"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7ch-TL-ggZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <outlet property="message_navigationBar" destination="7ch-TL-ggZ" id="3Z4-Pw-yqG"/>
+                        <segue destination="MdU-pL-8oa" kind="relationship" relationship="rootViewController" id="1Yg-GH-9xf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nGb-Ws-xzo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1583" y="-1240"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
@@ -71,45 +167,13 @@
                         <segue destination="tLp-f1-DAq" kind="relationship" relationship="viewControllers" id="e9B-ol-dFg"/>
                         <segue destination="3vd-11-GdL" kind="relationship" relationship="viewControllers" id="mgx-wu-g9d"/>
                         <segue destination="jUM-tj-we3" kind="relationship" relationship="viewControllers" id="paX-4U-zBH"/>
-                        <segue destination="X4b-1W-XNb" kind="relationship" relationship="viewControllers" id="ceK-5i-q7J"/>
+                        <segue destination="FCj-3X-H7v" kind="relationship" relationship="viewControllers" id="e9T-SK-tPt"/>
                         <segue destination="FSd-Ma-3kO" kind="relationship" relationship="viewControllers" id="td0-dK-xWW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-368" y="-1230"/>
-        </scene>
-        <!--消息-->
-        <scene sceneID="hDL-66-YrG">
-            <objects>
-                <tableViewController id="X4b-1W-XNb" customClass="MessageTableViewController" customModule="GuGuDa" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Id7-5O-dXY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="9Im-v9-z3u">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Im-v9-z3u" id="Vvj-zV-Osr">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
-                                </tableViewCellContentView>
-                                <animations/>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="X4b-1W-XNb" id="564-rT-fS2"/>
-                            <outlet property="delegate" destination="X4b-1W-XNb" id="L6C-kv-uQR"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="消息" id="brm-gi-9NR"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="p0N-hW-QDm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-961" y="-497"/>
         </scene>
         <!--我的-->
         <scene sceneID="1rt-rM-qQ6">
