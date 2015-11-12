@@ -69,7 +69,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="tLp-f1-DAq" kind="relationship" relationship="viewControllers" id="e9B-ol-dFg"/>
-                        <segue destination="uJG-pf-gpz" kind="relationship" relationship="viewControllers" id="4GY-7P-cni"/>
+                        <segue destination="3vd-11-GdL" kind="relationship" relationship="viewControllers" id="mgx-wu-g9d"/>
                         <segue destination="jUM-tj-we3" kind="relationship" relationship="viewControllers" id="paX-4U-zBH"/>
                         <segue destination="X4b-1W-XNb" kind="relationship" relationship="viewControllers" id="ceK-5i-q7J"/>
                         <segue destination="FSd-Ma-3kO" kind="relationship" relationship="viewControllers" id="td0-dK-xWW"/>
@@ -77,7 +77,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-392" y="-1286"/>
+            <point key="canvasLocation" x="-368" y="-1230"/>
         </scene>
         <!--消息-->
         <scene sceneID="hDL-66-YrG">
@@ -132,30 +132,30 @@
             <point key="canvasLocation" x="-961" y="569"/>
         </scene>
         <!--发现-->
-        <scene sceneID="0Sw-4U-RQh">
+        <scene sceneID="R6q-Bh-WIE">
             <objects>
-                <tableViewController id="uJG-pf-gpz" customClass="FindTableViewController" customModule="GuGuDa" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="54" sectionHeaderHeight="28" sectionFooterHeight="28" id="uio-lI-V8q">
+                <tableViewController id="uQs-F6-bzb" customClass="FindTableViewController" customModule="GuGuDa" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1TB-eG-hkN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="findTableViewCell" rowHeight="54" id="mZg-qd-XWD" customClass="FindTableViewCell" customModule="GuGuDa" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="54"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="findTableViewCell" rowHeight="50" id="ame-cc-1nJ" customClass="FindTableViewCell" customModule="GuGuDa" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mZg-qd-XWD" id="d4l-wJ-ZqC">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="53.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ame-cc-1nJ" id="18g-3M-Xi0">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="shh-xG-4zH">
-                                            <rect key="frame" x="8" y="8" width="37.5" height="37.5"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X9n-OV-cba">
+                                            <rect key="frame" x="8" y="8" width="50" height="33.5"/>
                                             <animations/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbK-ho-Gww">
-                                            <rect key="frame" x="66" y="8" width="180" height="37.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJe-B8-44E">
+                                            <rect key="frame" x="66" y="8" width="215" height="33.5"/>
                                             <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -164,24 +164,56 @@
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
-                                    <outlet property="findCellTitle_imageView" destination="shh-xG-4zH" id="W4F-co-qf6"/>
-                                    <outlet property="findCellTitle_label" destination="sbK-ho-Gww" id="8Od-Tj-DX4"/>
+                                    <outlet property="findCellTitle_imageView" destination="X9n-OV-cba" id="LEZ-lt-Avk"/>
+                                    <outlet property="findCellTitle_label" destination="dJe-B8-44E" id="kaq-Hl-NzL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="uJG-pf-gpz" id="blC-u8-esW"/>
-                            <outlet property="delegate" destination="uJG-pf-gpz" id="cwS-Yr-PX0"/>
+                            <outlet property="dataSource" destination="uQs-F6-bzb" id="gZA-0F-fja"/>
+                            <outlet property="delegate" destination="uQs-F6-bzb" id="rnC-Mx-Dc6"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="发现" id="YSK-FN-VBK"/>
+                    <navigationItem key="navigationItem" title="发现" id="btM-wA-qdo">
+                        <barButtonItem key="leftBarButtonItem" title="查找" id="yNU-oM-9qV">
+                            <connections>
+                                <action selector="find_findNavigationBarButtonItemClick:" destination="uQs-F6-bzb" id="UCJ-ha-VA5"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="二维码" id="cAn-NH-rX9">
+                            <connections>
+                                <action selector="QRCode_navigationBarButtonItemClick:" destination="uQs-F6-bzb" id="tG6-qH-57q"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="findTable_tableView" destination="uio-lI-V8q" id="829-xh-paI"/>
+                        <outlet property="QRCode_BarButtonItem" destination="cAn-NH-rX9" id="BMS-qZ-ME1"/>
+                        <outlet property="findTable_tableView" destination="1TB-eG-hkN" id="Fyq-Ni-ABR"/>
+                        <outlet property="find_BarButtonItem" destination="yNU-oM-9qV" id="6rv-xx-7UE"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OgO-Se-LDn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZAc-Vw-Bkj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="202" y="599"/>
+            <point key="canvasLocation" x="188" y="1399"/>
+        </scene>
+        <!--发现-->
+        <scene sceneID="aqx-Wo-6CP">
+            <objects>
+                <navigationController id="3vd-11-GdL" customClass="FindNavigationViewControl" customModule="GuGuDa" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="发现" id="87O-t7-Egb"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Cnm-X7-PBz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <outlet property="findNavigationBar_NavigationBar" destination="Cnm-X7-PBz" id="dgx-Tf-MIW"/>
+                        <segue destination="uQs-F6-bzb" kind="relationship" relationship="rootViewController" id="7Oy-Nw-APd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u0e-gW-cwO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="188" y="635"/>
         </scene>
     </scenes>
 </document>

@@ -17,25 +17,39 @@ class FindTableViewController: UITableViewController{
     
     @IBOutlet var findTable_tableView: UITableView!
     
+    @IBOutlet weak var find_BarButtonItem: UIBarButtonItem!
+    
+    @IBOutlet weak var QRCode_BarButtonItem: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.findTable_tableView.dataSource = self
         //初始化Cell对应的Model
 
         self.findTableCellModels.updateValue(
-            [("gudongba.img", "咕咚吧")],
+            [("GuDongBa.png", "咕咚吧")],
             forKey: self.findTableGroupNames[0]);
         self.findTableCellModels.updateValue(
-            [("fujin.img", "附近"), ("yundongchangdi.img", "运动场地"), ("huodong.img", "活动")],
+            [("GuDongBa.png", "附近"), ("GuDongBa.png", "运动场地"), ("GuDongBa.png", "活动")],
             forKey: self.findTableGroupNames[1])
         self.findTableCellModels.updateValue(
-            [("guanfangsaishi.img", "官方赛事"), ("jvlebu.img", "俱乐部"), ("jingsai.img", "竞赛")],
+            [("GuDongBa.png", "官方赛事"), ("GuDongBa.png", "俱乐部"), ("GuDongBa.png", "竞赛")],
             forKey: self.findTableGroupNames[2])
         self.findTableCellModels.updateValue(
-            [("yundonghuanli.img", "运动换礼"), ("weixinhaoyoupaihang.img", "微信好友排行")],
+            [("GuDongBa.png", "运动换礼"), ("GuDongBa.png", "微信好友排行")],
             forKey: self.findTableGroupNames[3])
         //去掉底部不显示的cell
         self.findTable_tableView.tableFooterView = UIView()
+    }
+    
+    /**
+     发现界面的查找按钮
+     */
+    @IBAction func find_findNavigationBarButtonItemClick(sender: AnyObject) {
+        print("发现页面的查找按钮被点击")
+    }
+  
+    @IBAction func QRCode_navigationBarButtonItemClick(sender: AnyObject) {
+        print("发现页面的扫描二维码按钮被点击")
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -48,6 +62,7 @@ class FindTableViewController: UITableViewController{
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.findTable_tableView.dequeueReusableCellWithIdentifier("findTableViewCell") as! FindTableViewCell
+        cell.findCellTitle_imageView.image = UIImage(named: self.findTableCellModels[self.findTableGroupNames[indexPath.section]]![indexPath.item].0)
         cell.findCellTitle_label.text = self.findTableCellModels[self.findTableGroupNames[indexPath.section]]![indexPath.item].1
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         return cell

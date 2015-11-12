@@ -12,6 +12,7 @@
 		E854D85B1BEDE427003FEAEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E854D8591BEDE427003FEAEB /* Main.storyboard */; };
 		E854D85D1BEDE427003FEAEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E854D85C1BEDE427003FEAEB /* Assets.xcassets */; };
 		E854D8601BEDE427003FEAEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E854D85E1BEDE427003FEAEB /* LaunchScreen.storyboard */; };
+		E87BF5D71BF46C7C009C993A /* FindNavigationViewControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87BF5D61BF46C7C009C993A /* FindNavigationViewControl.swift */; };
 		E8C552231BF0E7AB00E4C56B /* FindTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C552221BF0E7AB00E4C56B /* FindTableViewController.swift */; };
 		E8C552281BF195B600E4C56B /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C552271BF195B600E4C56B /* MessageTableViewController.swift */; };
 		E8C5522A1BF1961000E4C56B /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C552291BF1961000E4C56B /* MineViewController.swift */; };
@@ -39,6 +40,7 @@
 		E854D85C1BEDE427003FEAEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E854D85F1BEDE427003FEAEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E854D8611BEDE427003FEAEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E87BF5D61BF46C7C009C993A /* FindNavigationViewControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindNavigationViewControl.swift; sourceTree = "<group>"; };
 		E8C552221BF0E7AB00E4C56B /* FindTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindTableViewController.swift; sourceTree = "<group>"; };
 		E8C552271BF195B600E4C56B /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		E8C552291BF1961000E4C56B /* MineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			children = (
 				E8C552221BF0E7AB00E4C56B /* FindTableViewController.swift */,
 				E8F8EEA11BF32AC900FEB77E /* FindTableViewCell.swift */,
+				E87BF5D61BF46C7C009C993A /* FindNavigationViewControl.swift */,
 			);
 			name = Find;
 			path = GuGuDa/Find;
@@ -332,6 +335,7 @@
 				E8C5522A1BF1961000E4C56B /* MineViewController.swift in Sources */,
 				E8F8EEA21BF32AC900FEB77E /* FindTableViewCell.swift in Sources */,
 				E8C5522C1BF1968600E4C56B /* SportViewController.swift in Sources */,
+				E87BF5D71BF46C7C009C993A /* FindNavigationViewControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
