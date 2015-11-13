@@ -24,38 +24,6 @@
             </objects>
             <point key="canvasLocation" x="-392" y="-187"/>
         </scene>
-        <!--运动圈-->
-        <scene sceneID="i7J-wM-UPM">
-            <objects>
-                <tableViewController id="tLp-f1-DAq" customClass="CircleTableViewController" customModule="GuGuDa" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ewF-Rq-5Wd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="kvo-Lu-ZHO">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kvo-Lu-ZHO" id="bCu-M4-lDC">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
-                                </tableViewCellContentView>
-                                <animations/>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="tLp-f1-DAq" id="48J-VG-vv0"/>
-                            <outlet property="delegate" destination="tLp-f1-DAq" id="DLi-Si-Lkx"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="运动圈" id="hvi-ho-Han"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pvd-Z9-bEm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="202" y="-512"/>
-        </scene>
         <!--消息-->
         <scene sceneID="PAB-DK-YOW">
             <objects>
@@ -164,7 +132,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="tLp-f1-DAq" kind="relationship" relationship="viewControllers" id="e9B-ol-dFg"/>
+                        <segue destination="sot-5c-Brf" kind="relationship" relationship="viewControllers" id="EJL-gd-0Sb"/>
                         <segue destination="3vd-11-GdL" kind="relationship" relationship="viewControllers" id="mgx-wu-g9d"/>
                         <segue destination="jUM-tj-we3" kind="relationship" relationship="viewControllers" id="paX-4U-zBH"/>
                         <segue destination="FCj-3X-H7v" kind="relationship" relationship="viewControllers" id="e9T-SK-tPt"/>
@@ -173,7 +141,164 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-368" y="-1230"/>
+            <point key="canvasLocation" x="-438" y="-1533"/>
+        </scene>
+        <!--运动圈-->
+        <scene sceneID="Qbi-Vc-0jO">
+            <objects>
+                <tableViewController id="7ZW-Gs-hfb" customClass="CircleTableViewController" customModule="GuGuDa" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="417" sectionHeaderHeight="28" sectionFooterHeight="28" id="pSW-nc-TiQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CircleTableViewCell" rowHeight="417" id="rVf-dw-U1c" customClass="CircleTableViewCell" customModule="GuGuDa" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="320" height="417"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rVf-dw-U1c" id="irs-Ed-UsR">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="416.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xBL-56-2ef">
+                                            <rect key="frame" x="8" y="8" width="50" height="50"/>
+                                            <animations/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFC-FL-Zmc">
+                                            <rect key="frame" x="66" y="8" width="102" height="32"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Swf-5T-hyg">
+                                            <rect key="frame" x="66" y="43" width="82" height="15"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmV-vO-OM1">
+                                            <rect key="frame" x="181" y="10" width="38" height="19.5"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <state key="normal" title="关注"/>
+                                        </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Odo-jT-Kki">
+                                            <rect key="frame" x="8" y="66" width="304" height="246"/>
+                                            <animations/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQ7-j9-6xy">
+                                            <rect key="frame" x="8" y="320" width="71" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTz-8A-Mtc">
+                                            <rect key="frame" x="8" y="345" width="304" height="39"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsQ-dX-FUt">
+                                            <rect key="frame" x="8" y="392" width="46" height="16.5"/>
+                                            <animations/>
+                                            <state key="normal" title="评论"/>
+                                            <connections>
+                                                <action selector="circleCell_commentButton_click:" destination="7ZW-Gs-hfb" eventType="touchUpInside" id="p67-oj-jVg"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anC-67-dni">
+                                            <rect key="frame" x="137" y="392" width="46" height="16.5"/>
+                                            <animations/>
+                                            <state key="normal" title="点赞"/>
+                                            <connections>
+                                                <action selector="circleCell_likeButton_click:" destination="7ZW-Gs-hfb" eventType="touchUpInside" id="hZu-W4-7xj"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXW-3P-lrG">
+                                            <rect key="frame" x="266" y="392" width="46" height="16.5"/>
+                                            <animations/>
+                                            <state key="normal" title="分享"/>
+                                            <connections>
+                                                <action selector="circleCell_shareButton_click:" destination="7ZW-Gs-hfb" eventType="touchUpInside" id="5Ab-yl-5Xo"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPO-2g-0Gf">
+                                            <rect key="frame" x="266" y="8" width="42" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="circleCell_headPortrait_imageView" destination="xBL-56-2ef" id="1Vz-oz-jfm"/>
+                                    <outlet property="circleCell_like_button" destination="anC-67-dni" id="cxf-Im-Eca"/>
+                                    <outlet property="circleCell_payAttention_button" destination="jmV-vO-OM1" id="bal-IY-jOH"/>
+                                    <outlet property="circleCell_postComment_button" destination="zsQ-dX-FUt" id="M5d-jR-8rT"/>
+                                    <outlet property="circleCell_postContent_label" destination="wTz-8A-Mtc" id="WaT-aH-Mod"/>
+                                    <outlet property="circleCell_postDate_label" destination="MPO-2g-0Gf" id="KKn-Oa-7Zd"/>
+                                    <outlet property="circleCell_postLocation_label" destination="aQ7-j9-6xy" id="x9p-rh-ZLZ"/>
+                                    <outlet property="circleCell_postPictures_imageView" destination="Odo-jT-Kki" id="Kot-2M-mSh"/>
+                                    <outlet property="circleCell_share_button" destination="eXW-3P-lrG" id="mfm-6S-4qd"/>
+                                    <outlet property="circleCell_sportDays_label" destination="Swf-5T-hyg" id="Bv6-Hi-WMp"/>
+                                    <outlet property="circleCell_userName_label" destination="FFC-FL-Zmc" id="Nmg-69-o7X"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7ZW-Gs-hfb" id="dqj-8K-Obq"/>
+                            <outlet property="delegate" destination="7ZW-Gs-hfb" id="Eqv-Jk-EAw"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="运动圈" id="lKR-jY-3d5">
+                        <barButtonItem key="leftBarButtonItem" title="找好友" id="bPY-xC-p5y">
+                            <connections>
+                                <action selector="circleTable_findFriends_click:" destination="7ZW-Gs-hfb" id="goM-ZP-F7N"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="照相" id="A8K-PQ-rOp">
+                            <connections>
+                                <action selector="circleTabel_takePhotos_click:" destination="7ZW-Gs-hfb" id="nVg-66-fLd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="circleTable_findFriends_BarButtonItem" destination="bPY-xC-p5y" id="KBY-00-vB5"/>
+                        <outlet property="circleTable_tableView" destination="pSW-nc-TiQ" id="Vbh-1a-Uip"/>
+                        <outlet property="circleTable_takePhotos_BarButtonItem" destination="A8K-PQ-rOp" id="NVH-6v-CXP"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YOH-bs-ZiE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="756" y="-1229"/>
+        </scene>
+        <!--运动圈-->
+        <scene sceneID="NPw-bZ-e5U">
+            <objects>
+                <navigationController id="sot-5c-Brf" customClass="CircleNavigationViewControl" customModule="GuGuDa" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="运动圈" id="ruJ-sL-P6F"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pdc-O3-cMh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <outlet property="circleNavigation_navigationBar" destination="pdc-O3-cMh" id="lVK-IZ-h5Q"/>
+                        <segue destination="7ZW-Gs-hfb" kind="relationship" relationship="rootViewController" id="RtW-BZ-6PW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aaS-sx-UGb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="220" y="-1229"/>
         </scene>
         <!--我的-->
         <scene sceneID="1rt-rM-qQ6">
