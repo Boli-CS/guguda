@@ -1,29 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
-        <!--运动-->
-        <scene sceneID="yde-Wb-jjW">
-            <objects>
-                <viewController id="jUM-tj-we3" customClass="SportViewController" customModule="GuGuDa" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="r4K-ix-B96"/>
-                        <viewControllerLayoutGuide type="bottom" id="4Di-BT-lQA"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ezK-j8-OxG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="运动" id="cNs-K4-dzg"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KA6-ZO-nfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-392" y="-187"/>
-        </scene>
         <!--消息-->
         <scene sceneID="PAB-DK-YOW">
             <objects>
@@ -134,14 +114,14 @@
                     <connections>
                         <segue destination="sot-5c-Brf" kind="relationship" relationship="viewControllers" id="EJL-gd-0Sb"/>
                         <segue destination="3vd-11-GdL" kind="relationship" relationship="viewControllers" id="mgx-wu-g9d"/>
-                        <segue destination="jUM-tj-we3" kind="relationship" relationship="viewControllers" id="paX-4U-zBH"/>
+                        <segue destination="MsO-zc-rmC" kind="relationship" relationship="viewControllers" id="Gj4-8h-jgW"/>
                         <segue destination="FCj-3X-H7v" kind="relationship" relationship="viewControllers" id="e9T-SK-tPt"/>
                         <segue destination="FSd-Ma-3kO" kind="relationship" relationship="viewControllers" id="td0-dK-xWW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-438" y="-1533"/>
+            <point key="canvasLocation" x="-430" y="-1469"/>
         </scene>
         <!--运动圈-->
         <scene sceneID="Qbi-Vc-0jO">
@@ -280,6 +260,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YOH-bs-ZiE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="756" y="-1229"/>
+        </scene>
+        <!--运动-->
+        <scene sceneID="EUT-E9-LEO">
+            <objects>
+                <navigationController id="MsO-zc-rmC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="运动" id="KIx-Eh-PYo"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WuM-Vk-hQA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="qhE-11-FBX" kind="relationship" relationship="rootViewController" id="dT4-nc-Ktn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qMd-Fu-6IT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-430" y="-2230"/>
+        </scene>
+        <!--Sport View Controller-->
+        <scene sceneID="Vhk-a6-Pz5">
+            <objects>
+                <viewController id="qhE-11-FBX" customClass="SportViewController" customModule="GuGuDa" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WoN-Ye-HbA"/>
+                        <viewControllerLayoutGuide type="bottom" id="mP2-4b-J4m"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Y8b-Ly-x1p">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zym-Hq-Sab">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="运动设定" id="JVZ-H8-yuP"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7YO-gd-eXM">
+                            <rect key="frame" x="96" y="7" width="128" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <state key="normal" title="运动"/>
+                        </button>
+                        <barButtonItem key="rightBarButtonItem" title="历史记录" id="J9M-Ou-LQe"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N1Y-nO-EBA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="12" y="-2230"/>
         </scene>
         <!--运动圈-->
         <scene sceneID="NPw-bZ-e5U">

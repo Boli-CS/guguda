@@ -12,23 +12,46 @@ import UIKit
 /// “运动”主界面
 class SportViewController: UIViewController , MAMapViewDelegate, AMapLocationManagerDelegate {
     
+    /// 上侧标题栏运动模式选择按钮
+    @IBOutlet weak var sport_topModeSelect_button: UIButton!
+    
     var locationManager : AMapLocationManager?
     
     var mapView : MAMapView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationManager = AMapLocationManager()
-        locationManager!.delegate = self
-        locationManager!.startUpdatingLocation()
+        
         //添加地图界面
         initMapView()
     }
     
     func initMapView() {
+        locationManager = AMapLocationManager()
+        locationManager!.delegate = self
+        locationManager!.startUpdatingLocation()
         mapView = MAMapView(frame: self.view.bounds)
         mapView!.delegate = self
         self.view.addSubview(mapView!)
+        mapView?.showsUserLocation = true
+        mapView?.userTrackingMode = MAUserTrackingMode.Follow
+        
+        let gps_label = UILabel()
+        gps_label.frame = CGRectMake(10, 70, 50, 20)
+        gps_label.text = "GPS"
+        self.view.addSubview(gps_label)
+        
+        let airQuality_label = UILabel()
+        airQuality_label.frame = CGRectMake(350, 70, 50, 20)
+        airQuality_label.text = "良"
+        self.view.addSubview(airQuality_label)
+        
+        let startSport_button = UIButton(type: .Custom)
+        startSport_button.frame = CGRectMake(100,450,200,200)
+        startSport_button.setTitle("开始运动", forState: .Normal)
+        startSport_button.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        self.view.addSubview(startSport_button)
+        
     }
     
     func amapLocationManager(manager: AMapLocationManager!, didUpdateLocation location: CLLocation!) {
