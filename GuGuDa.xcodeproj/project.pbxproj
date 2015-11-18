@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		09D9FCA254538AC3D389CE13 /* Pods_GuGuDa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91250AB7BF9F1EDFAB0F0672 /* Pods_GuGuDa.framework */; };
+		E80B97E21BFB417A00E38A89 /* SportRecordingViewControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80B97E11BFB417A00E38A89 /* SportRecordingViewControl.swift */; };
 		E854D8541BEDE427003FEAEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E854D8531BEDE427003FEAEB /* AppDelegate.swift */; };
 		E854D85B1BEDE427003FEAEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E854D8591BEDE427003FEAEB /* Main.storyboard */; };
 		E854D85D1BEDE427003FEAEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E854D85C1BEDE427003FEAEB /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 		0C5BBA9569D3B2624461D4A9 /* Pods-GuGuDa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuGuDa.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuGuDa/Pods-GuGuDa.release.xcconfig"; sourceTree = "<group>"; };
 		91250AB7BF9F1EDFAB0F0672 /* Pods_GuGuDa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuGuDa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1EA5E5CDF960B28945304AD /* Pods-GuGuDa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuGuDa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuGuDa/Pods-GuGuDa.debug.xcconfig"; sourceTree = "<group>"; };
+		E80B97E11BFB417A00E38A89 /* SportRecordingViewControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportRecordingViewControl.swift; sourceTree = "<group>"; };
 		E854D8501BEDE427003FEAEB /* GuGuDa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuGuDa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E854D8531BEDE427003FEAEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E854D85A1BEDE427003FEAEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				E8C5522B1BF1968600E4C56B /* SportViewController.swift */,
+				E80B97E11BFB417A00E38A89 /* SportRecordingViewControl.swift */,
 			);
 			name = Sport;
 			path = GuGuDa/Sport;
@@ -342,6 +345,7 @@
 			files = (
 				E854D8541BEDE427003FEAEB /* AppDelegate.swift in Sources */,
 				E87BF5DD1BF47ECC009C993A /* CircleTableViewCell.swift in Sources */,
+				E80B97E21BFB417A00E38A89 /* SportRecordingViewControl.swift in Sources */,
 				E8D41CE01BEFA1BE00E07BAD /* CircleTableViewController.swift in Sources */,
 				E8C552281BF195B600E4C56B /* MessageTableViewController.swift in Sources */,
 				E8C552231BF0E7AB00E4C56B /* FindTableViewController.swift in Sources */,

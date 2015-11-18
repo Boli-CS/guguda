@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 /// “运动”主界面
-class SportViewController: UIViewController , MAMapViewDelegate, AMapLocationManagerDelegate {
+class SportViewController: UIViewController, MAMapViewDelegate, AMapLocationManagerDelegate {
     
     /// 上侧标题栏运动模式选择按钮
     @IBOutlet weak var sport_topModeSelect_button: UIButton!
@@ -50,6 +50,7 @@ class SportViewController: UIViewController , MAMapViewDelegate, AMapLocationMan
         startSport_button.frame = CGRectMake(100,450,200,200)
         startSport_button.setTitle("开始运动", forState: .Normal)
         startSport_button.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        startSport_button.addTarget(self, action: "startSport_button_click:", forControlEvents: .TouchUpInside)
         self.view.addSubview(startSport_button)
         
     }
@@ -58,6 +59,13 @@ class SportViewController: UIViewController , MAMapViewDelegate, AMapLocationMan
         print("获取新的地理位置")
         print(location.coordinate.latitude)
         print(location.coordinate.longitude)
+    }
+    
+    func startSport_button_click(sender: UIButton) {
+        print("开始运动")
+        let secondViewController = self.storyboard?.instantiateViewControllerWithIdentifier("SportRecordingViewControl") as! SportRecordingViewControl
+        
+        self.navigationController?.pushViewController(secondViewController, animated: true)
     }
     
 }
