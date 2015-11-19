@@ -37,6 +37,8 @@ class SportRecordingViewControl: UIViewController, MAMapViewDelegate, AMapLocati
     /// 已经运动的距离
     var distance : Double?
     
+    let stopWatch : StopWatch = StopWatch()
+    
     /// 暂停、完成、继续按钮
     @IBOutlet weak var sportRecording_dragToPause_button: UIButton!
     
@@ -52,6 +54,7 @@ class SportRecordingViewControl: UIViewController, MAMapViewDelegate, AMapLocati
         distance = 0
         dragToPauseButtonOriginalPosition = sportRecording_dragToPause_button.center
         continueAndFinishSuperViewOriginalPosition = sportRecording_continueAndFinishButtonSuperView_view.center
+        self.stopWatch.start()
         initMapView()
 //        initButtons()
     }
@@ -88,7 +91,7 @@ class SportRecordingViewControl: UIViewController, MAMapViewDelegate, AMapLocati
         lastLocation = location
         self.sportRecording_distance_label.text = self.distance?.format(".1")
         //运动持续时间
-        let timeInterval = NSDate().timeIntervalSinceDate(self.startTime!)
+        let timeInterval = self.stopWatch.getSeconds()!
 //        print("时间间隔为:" + timeInterval.format(".5"))
         let hour : Int = (Int)(timeInterval / 3600)
         let minute : Int = (Int)((timeInterval - Double(hour) * 3600.0) / 60)
@@ -191,20 +194,6 @@ class SportRecordingViewControl: UIViewController, MAMapViewDelegate, AMapLocati
         return dist;
     }
     
-//    func initButtons() -> Void {
-//        pauseButton = UIButton(type: .Custom)
-//        pauseButton?.setTitle(NSLocalizedString("SPORT_RECORDING_DRAG_DOWN_PAUSE", comment: "SPORT_RECORDING_DRAG_DOWN_PAUSE"), forState: .Normal)
-//        pauseButton?.frame = CGRectMake(100,100,100,100)
-//        pauseButton?.addTarget(self, action: "pauseButtonDrag:event:", forControlEvents: UIControlEvents.TouchDragInside)
-//        mapView?.addSubview(pauseButton!)
-//        
-//        finishButton = UIButton()
-//        finishButton?.titleLabel?.text = NSLocalizedString("SPORT_RECORDING_FINISH", comment: "SPORT_RECORDING_FINISH")
-//        
-//        continueButton = UIButton()
-//        continueButton?.titleLabel?.text = NSLocalizedString("SPORT_RECORDING_CONTINUE", comment: "SPORT_RECORDING_CONTINUE")
-//    }
-    
     @IBAction func dragToPauseButtonDrag(sender: AnyObject, forEvent event: UIEvent) {
 //        print("下拉暂停按钮被拖拽")
         let button = sender as! UIButton
@@ -225,11 +214,13 @@ class SportRecordingViewControl: UIViewController, MAMapViewDelegate, AMapLocati
         if button.frame.origin.y + button.bounds.height > sportRecoding_mapView_view.bounds.height {
             sportRecording_dragToPause_button.center.y = continueAndFinishSuperViewOriginalPosition!.y
             sportRecording_continueAndFinishButtonSuperView_view.center.y = dragToPauseButtonOriginalPosition!.y
+            self.stopWatch.pause()
         }
     }
    
     @IBAction func sportRecording_contineButton_clickUp(sender: AnyObject) {
         sportRecording_dragToPause_button.center.y = dragToPauseButtonOriginalPosition!.y
         sportRecording_continueAndFinishButtonSuperView_view.center.y = continueAndFinishSuperViewOriginalPosition!.y
+        self.stopWatch.resume()
     }
 }

@@ -12,6 +12,8 @@
 		E80B97F01BFC168800E38A89 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E80B97F21BFC168800E38A89 /* Localizable.strings */; };
 		E80B97F71BFC246500E38A89 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80B97F61BFC246500E38A89 /* GlobalVariables.swift */; };
 		E80B97FB1BFC4D4600E38A89 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80B97FA1BFC4D4600E38A89 /* DoubleExtension.swift */; };
+		E82166F71BFD74A9002A9760 /* StopWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82166F61BFD74A9002A9760 /* StopWatch.swift */; };
+		E82166F91BFD75C5002A9760 /* StopWatchStateEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82166F81BFD75C5002A9760 /* StopWatchStateEnum.swift */; };
 		E854D8541BEDE427003FEAEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E854D8531BEDE427003FEAEB /* AppDelegate.swift */; };
 		E854D85B1BEDE427003FEAEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E854D8591BEDE427003FEAEB /* Main.storyboard */; };
 		E854D85D1BEDE427003FEAEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E854D85C1BEDE427003FEAEB /* Assets.xcassets */; };
@@ -47,6 +49,8 @@
 		E80B97F31BFC16BC00E38A89 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		E80B97F61BFC246500E38A89 /* GlobalVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalVariables.swift; path = ../GlobalVariables.swift; sourceTree = "<group>"; };
 		E80B97FA1BFC4D4600E38A89 /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
+		E82166F61BFD74A9002A9760 /* StopWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopWatch.swift; sourceTree = "<group>"; };
+		E82166F81BFD75C5002A9760 /* StopWatchStateEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopWatchStateEnum.swift; sourceTree = "<group>"; };
 		E854D8501BEDE427003FEAEB /* GuGuDa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuGuDa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E854D8531BEDE427003FEAEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E854D85A1BEDE427003FEAEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -146,11 +150,22 @@
 			path = GuGuDa/Extension;
 			sourceTree = "<group>";
 		};
+		E82166F51BFD7443002A9760 /* CommonUtils */ = {
+			isa = PBXGroup;
+			children = (
+				E82166F61BFD74A9002A9760 /* StopWatch.swift */,
+				E82166F81BFD75C5002A9760 /* StopWatchStateEnum.swift */,
+			);
+			name = CommonUtils;
+			path = GuGuDa/CommonUtils;
+			sourceTree = "<group>";
+		};
 		E854D8471BEDE427003FEAEB = {
 			isa = PBXGroup;
 			children = (
 				E8F8EE9F1BF2433E00FEB77E /* AMap.bundle */,
 				E8F8EE901BF1CE7E00FEB77E /* AMapSwift-Bridging-Header.h */,
+				E82166F51BFD7443002A9760 /* CommonUtils */,
 				E80B97F81BFC4CF700E38A89 /* Extension */,
 				E8C552261BF1953200E4C56B /* Sport */,
 				E8C552251BF1951B00E4C56B /* Mine */,
@@ -371,8 +386,10 @@
 				E8D41CE01BEFA1BE00E07BAD /* CircleTableViewController.swift in Sources */,
 				E80B97F71BFC246500E38A89 /* GlobalVariables.swift in Sources */,
 				E8C552281BF195B600E4C56B /* MessageTableViewController.swift in Sources */,
+				E82166F71BFD74A9002A9760 /* StopWatch.swift in Sources */,
 				E8C552231BF0E7AB00E4C56B /* FindTableViewController.swift in Sources */,
 				E8C5522A1BF1961000E4C56B /* MineViewController.swift in Sources */,
+				E82166F91BFD75C5002A9760 /* StopWatchStateEnum.swift in Sources */,
 				E87BF5DF1BF481C5009C993A /* CircleNavigationViewControl.swift in Sources */,
 				E8F8EEA21BF32AC900FEB77E /* FindTableViewCell.swift in Sources */,
 				E8C5522C1BF1968600E4C56B /* SportViewController.swift in Sources */,
