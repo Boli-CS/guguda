@@ -1,0 +1,171 @@
+
+/* Class = "UILabel"; text = "卡路里（大卡）"; ObjectID = "2wP-0H-fXh"; */
+"2wP-0H-fXh.text" = "卡路里（大卡）";
+
+/* Class = "UITabBarItem"; title = "消息"; ObjectID = "3Vv-CG-2Zi"; */
+"3Vv-CG-2Zi.title" = "消息";
+
+/* Class = "UILabel"; text = "距离（公里）"; ObjectID = "3ws-kD-Iq2"; */
+"3ws-kD-Iq2.text" = "距离（公里）";
+
+/* Class = "UIBarButtonItem"; title = "卡币"; ObjectID = "5Y4-9I-ZZA"; */
+"5Y4-9I-ZZA.title" = "卡币";
+
+/* Class = "UIButton"; normalTitle = "运动"; ObjectID = "7YO-gd-eXM"; */
+"7YO-gd-eXM.normalTitle" = "运动";
+
+/* Class = "UIBarButtonItem"; title = "订单"; ObjectID = "7jI-at-af6"; */
+"7jI-at-af6.title" = "订单";
+
+/* Class = "UITabBarItem"; title = "发现"; ObjectID = "87O-t7-Egb"; */
+"87O-t7-Egb.title" = "发现";
+
+/* Class = "UIBarButtonItem"; title = "运动设定"; ObjectID = "8HB-6m-1hv"; */
+"8HB-6m-1hv.title" = "运动设定";
+
+/* Class = "UIBarButtonItem"; title = "照相"; ObjectID = "A8K-PQ-rOp"; */
+"A8K-PQ-rOp.title" = "照相";
+
+/* Class = "UIBarButtonItem"; title = "联系人"; ObjectID = "BA8-cy-tdc"; */
+"BA8-cy-tdc.title" = "联系人";
+
+/* Class = "UITabBarItem"; title = "我的"; ObjectID = "C0f-SO-HFx"; */
+"C0f-SO-HFx.title" = "我的";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "CuD-Oi-g9p"; */
+"CuD-Oi-g9p.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "FFC-FL-Zmc"; */
+"FFC-FL-Zmc.text" = "Label";
+
+/* Class = "UILabel"; text = "- -"; ObjectID = "FbY-2j-bok"; */
+"FbY-2j-bok.text" = "- -";
+
+/* Class = "UILabel"; text = "健康"; ObjectID = "Gwb-vj-bV9"; */
+"Gwb-vj-bV9.text" = "健康";
+
+/* Class = "UILabel"; text = "公里"; ObjectID = "HbP-a9-to2"; */
+"HbP-a9-to2.text" = "公里";
+
+/* Class = "UIBarButtonItem"; title = "历史记录"; ObjectID = "J9M-Ou-LQe"; */
+"J9M-Ou-LQe.title" = "历史记录";
+
+/* Class = "UIBarButtonItem"; title = "运动设定"; ObjectID = "JVZ-H8-yuP"; */
+"JVZ-H8-yuP.title" = "运动设定";
+
+/* Class = "UITabBarItem"; title = "运动"; ObjectID = "KIx-Eh-PYo"; */
+"KIx-Eh-PYo.title" = "运动";
+
+/* Class = "UINavigationItem"; title = "消息"; ObjectID = "Kfj-go-V9M"; */
+"Kfj-go-V9M.title" = "消息";
+
+/* Class = "UILabel"; text = "最近成就"; ObjectID = "Lji-11-diA"; */
+"Lji-11-diA.text" = "最近成就";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "MPO-2g-0Gf"; */
+"MPO-2g-0Gf.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "O2K-Ma-Wsf"; */
+"O2K-Ma-Wsf.text" = "Label";
+
+/* Class = "UILabel"; text = "时长"; ObjectID = "O3P-0k-8ld"; */
+"O3P-0k-8ld.text" = "时长";
+
+/* Class = "UILabel"; text = "最后一次运动"; ObjectID = "OAw-oq-Vru"; */
+"OAw-oq-Vru.text" = "最后一次运动";
+
+/* Class = "UILabel"; text = "平均速度（公里/时）"; ObjectID = "OFq-Mu-acr"; */
+"OFq-Mu-acr.text" = "平均速度（公里/时）";
+
+/* Class = "UILabel"; text = "配速（分钟/公里）"; ObjectID = "OPF-MO-Qpr"; */
+"OPF-MO-Qpr.text" = "配速（分钟/公里）";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "PWS-DV-1N0"; */
+"PWS-DV-1N0.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "R1j-R3-idZ"; */
+"R1j-R3-idZ.text" = "Label";
+
+/* Class = "UILabel"; text = "历史记录"; ObjectID = "Sg7-8r-RHW"; */
+"Sg7-8r-RHW.text" = "历史记录";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Swf-5T-hyg"; */
+"Swf-5T-hyg.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "XAQ-sY-D79"; */
+"XAQ-sY-D79.text" = "Label";
+
+/* Class = "UILabel"; text = "用户1234"; ObjectID = "XQ3-js-12R"; */
+"XQ3-js-12R.text" = "用户1234";
+
+/* Class = "UINavigationItem"; title = "跑步记录中"; ObjectID = "XhT-v1-ptv"; */
+"XhT-v1-ptv.title" = "跑步记录中";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "aQ7-j9-6xy"; */
+"aQ7-j9-6xy.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "运动团 3"; ObjectID = "aXV-FV-9lM"; */
+"aXV-FV-9lM.normalTitle" = "运动团 3";
+
+/* Class = "UIButton"; normalTitle = "点赞"; ObjectID = "anC-67-dni"; */
+"anC-67-dni.normalTitle" = "点赞";
+
+/* Class = "UILabel"; text = "习惯运动"; ObjectID = "b7E-4c-k5U"; */
+"b7E-4c-k5U.text" = "习惯运动";
+
+/* Class = "UIBarButtonItem"; title = "找好友"; ObjectID = "bPY-xC-p5y"; */
+"bPY-xC-p5y.title" = "找好友";
+
+/* Class = "UINavigationItem"; title = "发现"; ObjectID = "btM-wA-qdo"; */
+"btM-wA-qdo.title" = "发现";
+
+/* Class = "UILabel"; text = "- -"; ObjectID = "c7V-Cx-moF"; */
+"c7V-Cx-moF.text" = "- -";
+
+/* Class = "UIBarButtonItem"; title = "二维码"; ObjectID = "cAn-NH-rX9"; */
+"cAn-NH-rX9.title" = "二维码";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dJe-B8-44E"; */
+"dJe-B8-44E.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "分享"; ObjectID = "eXW-3P-lrG"; */
+"eXW-3P-lrG.normalTitle" = "分享";
+
+/* Class = "UIBarButtonItem"; title = "设置"; ObjectID = "euW-9r-Ndg"; */
+"euW-9r-Ndg.title" = "设置";
+
+/* Class = "UIButton"; normalTitle = "关注"; ObjectID = "jmV-vO-OM1"; */
+"jmV-vO-OM1.normalTitle" = "关注";
+
+/* Class = "UINavigationItem"; title = "运动圈"; ObjectID = "lKR-jY-3d5"; */
+"lKR-jY-3d5.title" = "运动圈";
+
+/* Class = "UILabel"; text = "- -"; ObjectID = "oJi-gd-1OP"; */
+"oJi-gd-1OP.text" = "- -";
+
+/* Class = "UILabel"; text = "- -"; ObjectID = "oSj-eh-yEG"; */
+"oSj-eh-yEG.text" = "- -";
+
+/* Class = "UILabel"; text = "- -"; ObjectID = "oe9-k3-ZPe"; */
+"oe9-k3-ZPe.text" = "- -";
+
+/* Class = "UIBarButtonItem"; title = "拍照"; ObjectID = "qMg-yi-tZc"; */
+"qMg-yi-tZc.title" = "拍照";
+
+/* Class = "UIButton"; normalTitle = "粉丝 3"; ObjectID = "qk9-Yp-5yQ"; */
+"qk9-Yp-5yQ.normalTitle" = "粉丝 3";
+
+/* Class = "UITabBarItem"; title = "运动圈"; ObjectID = "ruJ-sL-P6F"; */
+"ruJ-sL-P6F.title" = "运动圈";
+
+/* Class = "UIButton"; normalTitle = "关注 2"; ObjectID = "uEB-5L-5ri"; */
+"uEB-5L-5ri.normalTitle" = "关注 2";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "wTz-8A-Mtc"; */
+"wTz-8A-Mtc.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "查找"; ObjectID = "yNU-oM-9qV"; */
+"yNU-oM-9qV.title" = "查找";
+
+/* Class = "UIButton"; normalTitle = "评论"; ObjectID = "zsQ-dX-FUt"; */
+"zsQ-dX-FUt.normalTitle" = "评论";

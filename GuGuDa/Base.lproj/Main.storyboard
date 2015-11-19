@@ -375,6 +375,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hhi-F5-Z8F">
+                                <rect key="frame" x="0.0" y="568" width="320" height="71"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j9D-oT-obO">
+                                        <rect key="frame" x="43" y="8" width="50" height="50"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="mcM-sq-Wwb"/>
+                                        </constraints>
+                                        <state key="normal" title="完成"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RW4-UJ-oo7">
+                                        <rect key="frame" x="229" y="8" width="50" height="50"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="qqW-1J-1aG"/>
+                                        </constraints>
+                                        <state key="normal" title="继续"/>
+                                        <connections>
+                                            <action selector="dragToPauseButtonDrag:forEvent:" destination="Tsh-jn-yYQ" eventType="touchUpInside" id="KcE-Fj-5wh"/>
+                                            <action selector="sportRecording_contineButton_clickUp:" destination="Tsh-jn-yYQ" eventType="touchUpInside" id="K8q-dt-gd2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="j9D-oT-obO" firstAttribute="top" secondItem="hhi-F5-Z8F" secondAttribute="topMargin" id="2hU-Wz-e93"/>
+                                    <constraint firstItem="RW4-UJ-oo7" firstAttribute="top" secondItem="j9D-oT-obO" secondAttribute="top" id="8pc-92-y3C"/>
+                                    <constraint firstItem="RW4-UJ-oo7" firstAttribute="baseline" secondItem="j9D-oT-obO" secondAttribute="firstBaseline" id="GUC-94-g1J"/>
+                                    <constraint firstItem="j9D-oT-obO" firstAttribute="leading" secondItem="hhi-F5-Z8F" secondAttribute="leading" constant="43" id="MZK-j6-O9W"/>
+                                    <constraint firstItem="RW4-UJ-oo7" firstAttribute="firstBaseline" secondItem="j9D-oT-obO" secondAttribute="baseline" id="VfG-ZJ-8Kw"/>
+                                    <constraint firstAttribute="trailing" secondItem="RW4-UJ-oo7" secondAttribute="trailing" constant="41" id="eah-vw-462"/>
+                                    <constraint firstAttribute="bottom" secondItem="j9D-oT-obO" secondAttribute="bottom" constant="13" id="lgx-GJ-CyF"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2f2-vu-b5U">
                                 <rect key="frame" x="0.0" y="64" width="320" height="236"/>
                                 <subviews>
@@ -531,8 +567,26 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lK9-QO-tMB">
                                 <rect key="frame" x="0.0" y="300" width="320" height="268"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bl-Kd-UIU">
+                                        <rect key="frame" x="128" y="205" width="64" height="34"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="Efx-px-aAs"/>
+                                            <constraint firstAttribute="width" constant="64" id="pI6-3l-UEf"/>
+                                        </constraints>
+                                        <state key="normal" title="下拉暂停"/>
+                                        <connections>
+                                            <action selector="dragToPauseButtonDrag:forEvent:" destination="Tsh-jn-yYQ" eventType="touchDragInside" id="oAm-5L-MNA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="6bl-Kd-UIU" secondAttribute="bottom" constant="29" id="fqT-vF-s9z"/>
+                                    <constraint firstItem="6bl-Kd-UIU" firstAttribute="centerX" secondItem="lK9-QO-tMB" secondAttribute="centerX" id="x9Z-H8-yII"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <animations/>
@@ -541,11 +595,15 @@
                             <constraint firstItem="lK9-QO-tMB" firstAttribute="bottom" secondItem="oBW-cn-0Ud" secondAttribute="top" id="1Xf-Qb-t5Z"/>
                             <constraint firstItem="lK9-QO-tMB" firstAttribute="leading" secondItem="2f2-vu-b5U" secondAttribute="leading" id="BLf-LO-CAS"/>
                             <constraint firstAttribute="trailing" secondItem="lK9-QO-tMB" secondAttribute="trailing" id="E96-91-9Jb"/>
+                            <constraint firstItem="hhi-F5-Z8F" firstAttribute="trailing" secondItem="lK9-QO-tMB" secondAttribute="trailing" id="LTu-dZ-Ts1"/>
                             <constraint firstItem="2f2-vu-b5U" firstAttribute="top" secondItem="LBn-AA-S5f" secondAttribute="bottom" id="MQp-5e-SX8"/>
                             <constraint firstItem="lK9-QO-tMB" firstAttribute="trailing" secondItem="2f2-vu-b5U" secondAttribute="trailing" id="QsR-TJ-1Xd"/>
                             <constraint firstItem="lK9-QO-tMB" firstAttribute="leading" secondItem="txQ-Gx-VQC" secondAttribute="leading" id="fp9-cP-WAz"/>
                             <constraint firstItem="lK9-QO-tMB" firstAttribute="top" secondItem="txQ-Gx-VQC" secondAttribute="top" constant="300" id="hie-Ky-2ib"/>
+                            <constraint firstItem="hhi-F5-Z8F" firstAttribute="top" secondItem="oBW-cn-0Ud" secondAttribute="top" id="mcy-BW-GSi"/>
                             <constraint firstItem="lK9-QO-tMB" firstAttribute="top" secondItem="2f2-vu-b5U" secondAttribute="bottom" id="r7i-qB-8E8"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="hhi-F5-Z8F" secondAttribute="bottom" constant="-71" id="vEw-mz-tJg"/>
+                            <constraint firstItem="hhi-F5-Z8F" firstAttribute="leading" secondItem="lK9-QO-tMB" secondAttribute="leading" id="zX8-iy-Jht"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="跑步记录中" id="XhT-v1-ptv">
@@ -556,14 +614,16 @@
                         <outlet property="sportRecoding_mapView_view" destination="lK9-QO-tMB" id="K8C-Ng-7ZE"/>
                         <outlet property="sportRecording_averageSpeed_label" destination="c7V-Cx-moF" id="zu0-jT-9hb"/>
                         <outlet property="sportRecording_calorie_label" destination="oJi-gd-1OP" id="Wgs-Ow-nvN"/>
+                        <outlet property="sportRecording_continueAndFinishButtonSuperView_view" destination="hhi-F5-Z8F" id="ojW-or-Mnb"/>
                         <outlet property="sportRecording_distance_label" destination="FbY-2j-bok" id="5cr-LT-xdc"/>
+                        <outlet property="sportRecording_dragToPause_button" destination="6bl-Kd-UIU" id="X7S-Xk-N2s"/>
                         <outlet property="sportRecording_pace_labe" destination="oSj-eh-yEG" id="FcP-7e-WIQ"/>
                         <outlet property="sportRecording_time_label" destination="oe9-k3-ZPe" id="u4f-7s-mEF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YJR-nG-lAK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="19" y="-2883"/>
+            <point key="canvasLocation" x="-30" y="-3037"/>
         </scene>
         <!--Sport View Controller-->
         <scene sceneID="Vhk-a6-Pz5">

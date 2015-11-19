@@ -56,15 +56,15 @@ class SportViewController: UIViewController, MAMapViewDelegate, AMapLocationMana
     }
     
     func amapLocationManager(manager: AMapLocationManager!, didUpdateLocation location: CLLocation!) {
-        print("获取新的地理位置")
-        print(location.coordinate.latitude)
-        print(location.coordinate.longitude)
+//        print("获取新的地理位置")
+//        print(location.coordinate.latitude)
+//        print(location.coordinate.longitude)
     }
     
     func startSport_button_click(sender: UIButton) {
         print("开始运动")
         let secondViewController = self.storyboard?.instantiateViewControllerWithIdentifier("SportRecordingViewControl") as! SportRecordingViewControl
-        
+        self.locationManager?.stopUpdatingLocation()
         self.navigationController?.pushViewController(secondViewController, animated: true)
     }
     

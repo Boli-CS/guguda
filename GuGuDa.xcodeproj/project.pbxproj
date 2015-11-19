@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		09D9FCA254538AC3D389CE13 /* Pods_GuGuDa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91250AB7BF9F1EDFAB0F0672 /* Pods_GuGuDa.framework */; };
 		E80B97E21BFB417A00E38A89 /* SportRecordingViewControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80B97E11BFB417A00E38A89 /* SportRecordingViewControl.swift */; };
+		E80B97F01BFC168800E38A89 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E80B97F21BFC168800E38A89 /* Localizable.strings */; };
+		E80B97F71BFC246500E38A89 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80B97F61BFC246500E38A89 /* GlobalVariables.swift */; };
+		E80B97FB1BFC4D4600E38A89 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80B97FA1BFC4D4600E38A89 /* DoubleExtension.swift */; };
 		E854D8541BEDE427003FEAEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E854D8531BEDE427003FEAEB /* AppDelegate.swift */; };
 		E854D85B1BEDE427003FEAEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E854D8591BEDE427003FEAEB /* Main.storyboard */; };
 		E854D85D1BEDE427003FEAEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E854D85C1BEDE427003FEAEB /* Assets.xcassets */; };
@@ -40,6 +43,10 @@
 		91250AB7BF9F1EDFAB0F0672 /* Pods_GuGuDa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuGuDa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1EA5E5CDF960B28945304AD /* Pods-GuGuDa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuGuDa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuGuDa/Pods-GuGuDa.debug.xcconfig"; sourceTree = "<group>"; };
 		E80B97E11BFB417A00E38A89 /* SportRecordingViewControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportRecordingViewControl.swift; sourceTree = "<group>"; };
+		E80B97F11BFC168800E38A89 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E80B97F31BFC16BC00E38A89 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E80B97F61BFC246500E38A89 /* GlobalVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalVariables.swift; path = ../GlobalVariables.swift; sourceTree = "<group>"; };
+		E80B97FA1BFC4D4600E38A89 /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		E854D8501BEDE427003FEAEB /* GuGuDa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuGuDa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E854D8531BEDE427003FEAEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E854D85A1BEDE427003FEAEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -130,11 +137,21 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E80B97F81BFC4CF700E38A89 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E80B97FA1BFC4D4600E38A89 /* DoubleExtension.swift */,
+			);
+			name = Extension;
+			path = GuGuDa/Extension;
+			sourceTree = "<group>";
+		};
 		E854D8471BEDE427003FEAEB = {
 			isa = PBXGroup;
 			children = (
 				E8F8EE9F1BF2433E00FEB77E /* AMap.bundle */,
 				E8F8EE901BF1CE7E00FEB77E /* AMapSwift-Bridging-Header.h */,
+				E80B97F81BFC4CF700E38A89 /* Extension */,
 				E8C552261BF1953200E4C56B /* Sport */,
 				E8C552251BF1951B00E4C56B /* Mine */,
 				E8C552241BF194ED00E4C56B /* Message */,
@@ -163,6 +180,8 @@
 				E854D85C1BEDE427003FEAEB /* Assets.xcassets */,
 				E854D85E1BEDE427003FEAEB /* LaunchScreen.storyboard */,
 				E854D8611BEDE427003FEAEB /* Info.plist */,
+				E80B97F61BFC246500E38A89 /* GlobalVariables.swift */,
+				E80B97F21BFC168800E38A89 /* Localizable.strings */,
 			);
 			path = GuGuDa;
 			sourceTree = "<group>";
@@ -265,6 +284,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = E854D8471BEDE427003FEAEB;
 			productRefGroup = E854D8511BEDE427003FEAEB /* Products */;
@@ -281,6 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E80B97F01BFC168800E38A89 /* Localizable.strings in Resources */,
 				E854D8601BEDE427003FEAEB /* LaunchScreen.storyboard in Resources */,
 				E854D85D1BEDE427003FEAEB /* Assets.xcassets in Resources */,
 				E8F8EEA01BF2433E00FEB77E /* AMap.bundle in Resources */,
@@ -343,10 +364,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E80B97FB1BFC4D4600E38A89 /* DoubleExtension.swift in Sources */,
 				E854D8541BEDE427003FEAEB /* AppDelegate.swift in Sources */,
 				E87BF5DD1BF47ECC009C993A /* CircleTableViewCell.swift in Sources */,
 				E80B97E21BFB417A00E38A89 /* SportRecordingViewControl.swift in Sources */,
 				E8D41CE01BEFA1BE00E07BAD /* CircleTableViewController.swift in Sources */,
+				E80B97F71BFC246500E38A89 /* GlobalVariables.swift in Sources */,
 				E8C552281BF195B600E4C56B /* MessageTableViewController.swift in Sources */,
 				E8C552231BF0E7AB00E4C56B /* FindTableViewController.swift in Sources */,
 				E8C5522A1BF1961000E4C56B /* MineViewController.swift in Sources */,
@@ -362,6 +385,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		E80B97F21BFC168800E38A89 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E80B97F11BFC168800E38A89 /* en */,
+				E80B97F31BFC16BC00E38A89 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		E854D8591BEDE427003FEAEB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -1,0 +1,36 @@
+/* 
+  Localizable.strings
+  GuGuDa
+
+  Created by boli on 11/18/15.
+  Copyright © 2015 boli. All rights reserved.
+*/
+/**
+ *  弹出框确认按钮
+ */
+ALERT_OK="确认";
+
+/**
+ *  定位失败弹出框的标题
+ */
+LOCATION_FAIL_ALERT_TITLE="定位失败";
+
+/**
+ *  定位失败弹出框的内容
+ */
+LOCATION_FAIL_ALERT_MESSAGE="定位失败，无法开始运动记录";
+
+/**
+ *  运动界面下拉暂停
+ */
+SPORT_RECORDING_DRAG_DOWN_PAUSE = "下拉暂停";
+
+/**
+ *  运动界面继续运动
+ */
+SPORT_RECORDING_CONTINUE = "继续";
+
+/**
+ *  运动界面结束运动
+ */
+SPORT_RECORDING_FINISH = "结束";
