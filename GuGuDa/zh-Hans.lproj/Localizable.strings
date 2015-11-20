@@ -34,3 +34,18 @@ SPORT_RECORDING_CONTINUE = "继续";
  *  运动界面结束运动
  */
 SPORT_RECORDING_FINISH = "结束";
+
+/**
+ *  运动圈界面
+ */
+CIRCLE_NAVIGATION_BAR_TRENDS="动态";
+
+/**
+ *  运动圈界面
+ */
+CIRCLE_NAVIGATION_BAR_NEARBY="附近";
+
+/**
+ *  运动圈界面
+ */
+CIRCLE_NAVIGATION_BAR_SQUARE="广场";

@@ -215,6 +215,7 @@ class SportRecordingViewControl: UIViewController, MAMapViewDelegate, AMapLocati
             sportRecording_dragToPause_button.center.y = continueAndFinishSuperViewOriginalPosition!.y
             sportRecording_continueAndFinishButtonSuperView_view.center.y = dragToPauseButtonOriginalPosition!.y
             self.stopWatch.pause()
+            self.locationManager?.stopUpdatingLocation()
         }
     }
    
@@ -222,5 +223,6 @@ class SportRecordingViewControl: UIViewController, MAMapViewDelegate, AMapLocati
         sportRecording_dragToPause_button.center.y = dragToPauseButtonOriginalPosition!.y
         sportRecording_continueAndFinishButtonSuperView_view.center.y = continueAndFinishSuperViewOriginalPosition!.y
         self.stopWatch.resume()
+        self.locationManager?.startUpdatingLocation()
     }
 }

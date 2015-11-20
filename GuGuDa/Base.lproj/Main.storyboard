@@ -127,7 +127,7 @@
             </objects>
             <point key="canvasLocation" x="-430" y="-1469"/>
         </scene>
-        <!--运动圈-->
+        <!--Circle Table View Controller-->
         <scene sceneID="Qbi-Vc-0jO">
             <objects>
                 <tableViewController id="7ZW-Gs-hfb" customClass="CircleTableViewController" customModule="GuGuDa" customModuleProvider="target" sceneMemberID="viewController">
@@ -178,6 +178,9 @@
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <state key="normal" title="关注"/>
+                                            <connections>
+                                                <action selector="circleCell_payAttentionButton_click:" destination="7ZW-Gs-hfb" eventType="touchUpInside" id="xyY-hf-9o4"/>
+                                            </connections>
                                         </button>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Odo-jT-Kki">
                                             <rect key="frame" x="8" y="66" width="304" height="246"/>
@@ -305,7 +308,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="运动圈" id="lKR-jY-3d5">
+                    <navigationItem key="navigationItem" id="lKR-jY-3d5">
                         <barButtonItem key="leftBarButtonItem" title="找好友" id="bPY-xC-p5y">
                             <connections>
                                 <action selector="circleTable_findFriends_click:" destination="7ZW-Gs-hfb" id="goM-ZP-F7N"/>
@@ -393,10 +396,6 @@
                                             <constraint firstAttribute="width" constant="50" id="qqW-1J-1aG"/>
                                         </constraints>
                                         <state key="normal" title="继续"/>
-                                        <connections>
-                                            <action selector="dragToPauseButtonDrag:forEvent:" destination="Tsh-jn-yYQ" eventType="touchUpInside" id="KcE-Fj-5wh"/>
-                                            <action selector="sportRecording_contineButton_clickUp:" destination="Tsh-jn-yYQ" eventType="touchUpInside" id="K8q-dt-gd2"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <animations/>
@@ -673,6 +672,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aaS-sx-UGb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="220" y="-1229"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="CQd-Sb-J1C">
+            <objects>
+                <viewController id="CaM-9d-qmU" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fxb-y4-SkQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="0Lw-MB-8Cq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OxT-sY-oCQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bdH-jd-CN8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="220" y="-586"/>
         </scene>
         <!--发现-->
         <scene sceneID="R6q-Bh-WIE">

@@ -15,6 +15,8 @@ class CircleNavigationViewControl: UINavigationController {
     
     override func viewDidLoad() {
         self.circleNavigation_navigationBar.backgroundColor = UIColor.greenColor()
-        }
+    }
+    
+    
     
 }
