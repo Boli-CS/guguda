@@ -396,6 +396,9 @@
                                             <constraint firstAttribute="width" constant="50" id="qqW-1J-1aG"/>
                                         </constraints>
                                         <state key="normal" title="继续"/>
+                                        <connections>
+                                            <action selector="sportRecording_contineButton_clickUp:" destination="Tsh-jn-yYQ" eventType="touchUpInside" id="Onn-Bn-iWx"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <animations/>

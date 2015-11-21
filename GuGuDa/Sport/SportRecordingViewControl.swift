@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Darwin
 
-class SportRecordingViewControl: UIViewController, MAMapViewDelegate, AMapLocationManagerDelegate  {
+class SportRecordingViewControl: UIViewController, MAMapViewDelegate, AMapLocationManagerDelegate {
     
     @IBOutlet weak var sportRecording_distance_label: UILabel!
     
@@ -28,6 +28,7 @@ class SportRecordingViewControl: UIViewController, MAMapViewDelegate, AMapLocati
     
     var locationManager : AMapLocationManager?
     
+    var i = 1;
     /// 上一次定位的位置
     var lastLocation : CLLocation?
     
@@ -47,7 +48,9 @@ class SportRecordingViewControl: UIViewController, MAMapViewDelegate, AMapLocati
     
     var dragToPauseButtonOriginalPosition : CGPoint?
     var continueAndFinishSuperViewOriginalPosition : CGPoint?
-    
+    //
+    let queue = NSOperationQueue()
+    var uiUpdateTimer: NSTimer?
     override func viewDidLoad() {
         super.viewDidLoad()
         startTime = NSDate()
@@ -56,7 +59,8 @@ class SportRecordingViewControl: UIViewController, MAMapViewDelegate, AMapLocati
         continueAndFinishSuperViewOriginalPosition = sportRecording_continueAndFinishButtonSuperView_view.center
         self.stopWatch.start()
         initMapView()
-//        initButtons()
+        uiUpdateTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "updateSportTimeLabel", userInfo: nil, repeats: true)
+
     }
     
     func initMapView() {
@@ -78,26 +82,36 @@ class SportRecordingViewControl: UIViewController, MAMapViewDelegate, AMapLocati
     }
     
     /**
+     定时更新时间label
+     */
+    func updateSportTimeLabel() {
+//        print("enter updateSportTimeLabel")
+        //运动持续时间
+        let timeInterval = self.stopWatch.getSeconds()!
+        //        print("时间间隔为:" + timeInterval.format(".5"))
+        let hour : Int = (Int)(timeInterval / 3600)
+        let minute : Int = (Int)((timeInterval - Double(hour) * 3600.0) / 60)
+        let second = Int(timeInterval - Double(hour) * 3600.0 - Double(minute) * 60.0)
+        self.sportRecording_time_label.text = "\(hour):\(minute):\(second)"
+
+    }
+    
+    /**
      定位回调函数
      
      - parameter manager:
      - parameter location:
      */
     func amapLocationManager(manager: AMapLocationManager!, didUpdateLocation location: CLLocation!) {
+        print("重新获取位置成功")
         if lastLocation == nil {
             lastLocation = location
         }
         self.distance = self.distance! + lantitudeLongitudeDist(lastLocation!, location2: location)
         lastLocation = location
         self.sportRecording_distance_label.text = self.distance?.format(".1")
-        //运动持续时间
-        let timeInterval = self.stopWatch.getSeconds()!
-//        print("时间间隔为:" + timeInterval.format(".5"))
-        let hour : Int = (Int)(timeInterval / 3600)
-        let minute : Int = (Int)((timeInterval - Double(hour) * 3600.0) / 60)
-        let second = Int(timeInterval - Double(hour) * 3600.0 - Double(minute) * 60.0)
-        self.sportRecording_time_label.text = "\(hour):\(minute):\(second)"
         
+        let timeInterval = self.stopWatch.getSeconds()!
         //平均速度
         self.sportRecording_averageSpeed_label.text = (self.distance! / (timeInterval / 3600)).format(".1")
 
@@ -210,7 +224,7 @@ class SportRecordingViewControl: UIViewController, MAMapViewDelegate, AMapLocati
         sportRecording_continueAndFinishButtonSuperView_view.center = CGPointMake(sportRecording_continueAndFinishButtonSuperView_view.center.x
             , sportRecording_continueAndFinishButtonSuperView_view.center.y - 2 * delta_y)
         
-        print(sportRecording_continueAndFinishButtonSuperView_view.center.y)
+//        print(sportRecording_continueAndFinishButtonSuperView_view.center.y)
         if button.frame.origin.y + button.bounds.height > sportRecoding_mapView_view.bounds.height {
             sportRecording_dragToPause_button.center.y = continueAndFinishSuperViewOriginalPosition!.y
             sportRecording_continueAndFinishButtonSuperView_view.center.y = dragToPauseButtonOriginalPosition!.y
@@ -219,7 +233,13 @@ class SportRecordingViewControl: UIViewController, MAMapViewDelegate, AMapLocati
         }
     }
    
+    /**
+     继续运动按钮被点击
+     
+     - parameter sender:
+     */
     @IBAction func sportRecording_contineButton_clickUp(sender: AnyObject) {
+        print("继续运动了")
         sportRecording_dragToPause_button.center.y = dragToPauseButtonOriginalPosition!.y
         sportRecording_continueAndFinishButtonSuperView_view.center.y = continueAndFinishSuperViewOriginalPosition!.y
         self.stopWatch.resume()

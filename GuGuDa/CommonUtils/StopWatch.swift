@@ -25,8 +25,10 @@ class StopWatch {
     
     func getSeconds() -> Double? {
         if(self.state == StopWatchStateEnum.COUNTING) {
-            let timeInterval = NSDate().timeIntervalSinceDate(startDate!)
+            let now = NSDate()
+            let timeInterval = now.timeIntervalSinceDate(startDate!)
             self.seconds = Double(timeInterval) + self.seconds!
+            self.startDate = now
         }
         return self.seconds
     }
