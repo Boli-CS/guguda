@@ -73,7 +73,6 @@ class MineViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
 //        mine_healthContent_scrollView.delaysContentTouches = false
         initControls()
-        initGesture()
         
     }
     
@@ -95,33 +94,24 @@ class MineViewController: UIViewController, UIScrollViewDelegate {
         print("我的界面的历史记录按钮被点击")
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        if scrollView.contentOffset.x > lastScrollViewContentOffsetX {
-            isDraggingLeft = true
-        }
-        else {
-            isDraggingLeft = false
-        }
-        lastScrollViewContentOffsetX = scrollView.contentOffset.x
-        if isDraggingLeft {
-            if isPositionNearEnoughToTarget(position: Float(scrollView.contentOffset.x), target: Float(mine_healthContentSteps_imageView.frame.width / 2) , gap: isNearEnoughGap){
-                print("向左滑动到sleep")
-                scrollView.setContentOffset(CGPointMake(mine_healthContentSleep_imageView.frame.origin.x, scrollView.contentOffset.y), animated: false)
-            }
-            if isPositionNearEnoughToTarget(position: Float(scrollView.contentOffset.x), target: Float(mine_healthContentSteps_imageView.frame.width + mine_healthContentSleep_imageView.frame.width / 2), gap: isNearEnoughGap) {
-                print("向左滑动到weight")
-                scrollView.setContentOffset(CGPointMake(mine_healthContentWeight_imageView.frame.origin.x, scrollView.contentOffset.y), animated: false)
-            }
-        }
-        else {
-            if isPositionNearEnoughToTarget(position: Float(scrollView.contentOffset.x), target: Float(mine_healthContentSteps_imageView.frame.width + mine_healthContentSleep_imageView.frame.width / 2), gap: isNearEnoughGap) {
-                print("向右滑动到sleep")
-                scrollView.setContentOffset(CGPointMake(mine_healthContentSleep_imageView.frame.origin.x, scrollView.contentOffset.y), animated: false)
-            }
-            if isPositionNearEnoughToTarget(position:Float(scrollView.contentOffset.x), target: Float(mine_healthContentSteps_imageView.frame.width / 2), gap: isNearEnoughGap) {
-                print("向右滑动到Step")
-                scrollView.setContentOffset(CGPointMake(mine_healthContentSteps_imageView.frame.origin.x, scrollView.contentOffset.y), animated: false)
-            }
+    func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        print("scrollViewWillEndDragging")
+        isDraggingLeft = true
+        
+        let disToStep = self.mine_healthContent_scrollView.contentOffset.x
+        let disToSleep = abs(self.mine_healthContent_scrollView.contentOffset.x - self.mine_healthContentSteps_imageView.frame.width)
+        let disToWeight = abs(self.mine_healthContent_scrollView.contentOffset.x - self.mine_healthContentSteps_imageView.frame.width - self.mine_healthContentSleep_imageView.frame.width)
+        switch min(disToStep, disToSleep, disToWeight) {
+        case disToStep:
+            print("Set to Step")
+            targetContentOffset.memory = (CGPointMake(mine_healthContentSteps_imageView.frame.origin.x, self.mine_healthContent_scrollView.contentOffset.y))
+        case disToSleep:
+            print("Set to Sleep")
+            targetContentOffset.memory = CGPointMake(mine_healthContentSleep_imageView.frame.origin.x, self.mine_healthContent_scrollView.contentOffset.y)
+        case disToWeight:
+            print("Set to weight")
+            targetContentOffset.memory = CGPointMake(mine_healthContentWeight_imageView.frame.origin.x, self.mine_healthContent_scrollView.contentOffset.y)
+        default: break
         }
     }
     
@@ -136,18 +126,5 @@ class MineViewController: UIViewController, UIScrollViewDelegate {
      */
     func isPositionNearEnoughToTarget(position position : Float, target : Float, gap : Float) -> Bool {
         return abs(position - target) < gap
-    }
-    
-    func initGesture() {
-        let healthContentTouchUp = UITapGestureRecognizer(target: self, action: "healthContentTouchUp")
-        self.mine_healthContent_scrollView.addGestureRecognizer(healthContentTouchUp)
-    }
-    
-    /**
-     健康栏TouchUp事件
-     */
-    func healthContentTouchUp() {
-        print("健康栏TouchUp事件")
-        
     }
 }
