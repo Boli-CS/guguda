@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 /// "运动圈"主界面
 class CircleTableViewController: UITableViewController {
@@ -19,13 +21,11 @@ class CircleTableViewController: UITableViewController {
     @IBOutlet weak var circleTable_takePhotos_BarButtonItem: UIBarButtonItem!
     
     var customNavigationItemView : UIView?
-    let circleTableViewDataModel = [
-        ("GuDongBa.png", "Bob1", "15", "2", "GuDongBa.png", "ShenZhen", "乌拉拉拉"),
-        ("GuDongBa.png", "Bob2", "15", "2", "GuDongBa.png", "ShenZhen", "乌拉拉拉")
-    ]
+    var circleTableViewDataModel = [CircleTableViewCellDomain]()
     
     override func viewDidLoad() {
         initNavigationBarTitleButton()
+        getTableViewDataFromServer()
     }
     
     /**
@@ -78,6 +78,28 @@ class CircleTableViewController: UITableViewController {
 
     }
     
+    func getTableViewDataFromServer() {
+        print("enter CircleTableViewControl.getTableViewDataFromServer")
+        Alamofire.request(.GET, GET_CIRCLE_TRENDS_TABLE_CELLS)
+            .responseJSON { response in
+//                print(response.request)  // original URL request
+//                print(response.response) // URL response
+//                print(response.data)     // server data
+//                print(response.result)   // result of response serialization
+                let circleCellJson = JSON(response.result.value!)
+                for (_,subJson):(String, JSON) in circleCellJson {
+                    let circleTableViewCellDomain = CircleTableViewCellDomain()
+                    circleTableViewCellDomain.userName = subJson["userName"].string
+                    circleTableViewCellDomain.sportDays = subJson["sportDays"].string
+                    circleTableViewCellDomain.postDate = subJson["postDate"].string
+                    circleTableViewCellDomain.postLocation = subJson["postLocation"].string
+                    circleTableViewCellDomain.postContent = subJson["postContent"].string
+                    self.circleTableViewDataModel.append(circleTableViewCellDomain)
+                }
+                self.circleTable_tableView.reloadData()
+        }
+    }
+    
     override func viewDidAppear(animated: Bool) {
     }
     
@@ -99,13 +121,13 @@ class CircleTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.circleTable_tableView.dequeueReusableCellWithIdentifier("CircleTableViewCell") as! CircleTableViewCell
-        cell.circleCell_headPortrait_imageView.image = UIImage(named: self.circleTableViewDataModel[indexPath.item].0)
-        cell.circleCell_userName_label.text = self.circleTableViewDataModel[indexPath.item].1
-        cell.circleCell_sportDays_label.text = "运动第" + self.circleTableViewDataModel[indexPath.item].2 + "天"
-        cell.circleCell_postDate_label.text = self.circleTableViewDataModel[indexPath.item].3 + "天前"
-        cell.circleCell_postPictures_imageView.image = UIImage(named: self.circleTableViewDataModel[indexPath.item].4)
-        cell.circleCell_postLocation_label.text = self.circleTableViewDataModel[indexPath.item].5
-        cell.circleCell_postContent_label.text = self.circleTableViewDataModel[indexPath.item].6
+        cell.circleCell_headPortrait_imageView.image = UIImage(named: self.circleTableViewDataModel[indexPath.item].headPortrait!)
+        cell.circleCell_userName_label.text = self.circleTableViewDataModel[indexPath.item].userName
+        cell.circleCell_sportDays_label.text = "运动第" + self.circleTableViewDataModel[indexPath.item].sportDays! + "天"
+        cell.circleCell_postDate_label.text = self.circleTableViewDataModel[indexPath.item].postDate
+        cell.circleCell_postPictures_imageView.image = UIImage(named: self.circleTableViewDataModel[indexPath.item].postPictures![0])
+        cell.circleCell_postLocation_label.text = self.circleTableViewDataModel[indexPath.item].postLocation
+        cell.circleCell_postContent_label.text = self.circleTableViewDataModel[indexPath.item].postContent
         //表示每个cell的按钮
         cell.circleCell_payAttention_button.tag = indexPath.item
         cell.circleCell_postComment_button.tag = indexPath.item

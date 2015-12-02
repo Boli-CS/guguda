@@ -84,8 +84,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-GuGuDa/Alamofire.framework"
   install_framework "Pods-GuGuDa/SQLite.framework"
+  install_framework "Pods-GuGuDa/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-GuGuDa/Alamofire.framework"
   install_framework "Pods-GuGuDa/SQLite.framework"
+  install_framework "Pods-GuGuDa/SwiftyJSON.framework"
 fi

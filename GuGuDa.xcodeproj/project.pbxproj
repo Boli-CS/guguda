@@ -14,6 +14,8 @@
 		E80B97FB1BFC4D4600E38A89 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80B97FA1BFC4D4600E38A89 /* DoubleExtension.swift */; };
 		E82166F71BFD74A9002A9760 /* StopWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82166F61BFD74A9002A9760 /* StopWatch.swift */; };
 		E82166F91BFD75C5002A9760 /* StopWatchStateEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82166F81BFD75C5002A9760 /* StopWatchStateEnum.swift */; };
+		E8238B5F1C0EF62C0026B58C /* CircleTableViewCellDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8238B5E1C0EF62C0026B58C /* CircleTableViewCellDomain.swift */; };
+		E8238B641C0F0A9A0026B58C /* HttpRequestConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8238B631C0F0A9A0026B58C /* HttpRequestConstant.swift */; };
 		E854D8541BEDE427003FEAEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E854D8531BEDE427003FEAEB /* AppDelegate.swift */; };
 		E854D85B1BEDE427003FEAEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E854D8591BEDE427003FEAEB /* Main.storyboard */; };
 		E854D85D1BEDE427003FEAEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E854D85C1BEDE427003FEAEB /* Assets.xcassets */; };
@@ -51,6 +53,8 @@
 		E80B97FA1BFC4D4600E38A89 /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		E82166F61BFD74A9002A9760 /* StopWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopWatch.swift; sourceTree = "<group>"; };
 		E82166F81BFD75C5002A9760 /* StopWatchStateEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopWatchStateEnum.swift; sourceTree = "<group>"; };
+		E8238B5E1C0EF62C0026B58C /* CircleTableViewCellDomain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CircleTableViewCellDomain.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		E8238B631C0F0A9A0026B58C /* HttpRequestConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequestConstant.swift; sourceTree = "<group>"; };
 		E854D8501BEDE427003FEAEB /* GuGuDa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuGuDa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E854D8531BEDE427003FEAEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E854D85A1BEDE427003FEAEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,8 +64,8 @@
 		E87BF5D61BF46C7C009C993A /* FindNavigationViewControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindNavigationViewControl.swift; sourceTree = "<group>"; };
 		E87BF5D81BF472FD009C993A /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		E87BF5DA1BF47352009C993A /* MessageNavigationViewControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageNavigationViewControl.swift; sourceTree = "<group>"; };
-		E87BF5DC1BF47ECC009C993A /* CircleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleTableViewCell.swift; sourceTree = "<group>"; };
-		E87BF5DE1BF481C5009C993A /* CircleNavigationViewControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleNavigationViewControl.swift; sourceTree = "<group>"; };
+		E87BF5DC1BF47ECC009C993A /* CircleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CircleTableViewCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		E87BF5DE1BF481C5009C993A /* CircleNavigationViewControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CircleNavigationViewControl.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E8C552221BF0E7AB00E4C56B /* FindTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindTableViewController.swift; sourceTree = "<group>"; };
 		E8C552271BF195B600E4C56B /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		E8C552291BF1961000E4C56B /* MineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
@@ -160,9 +164,27 @@
 			path = GuGuDa/CommonUtils;
 			sourceTree = "<group>";
 		};
+		E8238B5D1C0EF5F20026B58C /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				E8238B5E1C0EF62C0026B58C /* CircleTableViewCellDomain.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		E8238B611C0F0A420026B58C /* GlobalData */ = {
+			isa = PBXGroup;
+			children = (
+				E8238B631C0F0A9A0026B58C /* HttpRequestConstant.swift */,
+			);
+			name = GlobalData;
+			path = GuGuDa/GlobalData;
+			sourceTree = "<group>";
+		};
 		E854D8471BEDE427003FEAEB = {
 			isa = PBXGroup;
 			children = (
+				E8238B611C0F0A420026B58C /* GlobalData */,
 				E8F8EE9F1BF2433E00FEB77E /* AMap.bundle */,
 				E8F8EE901BF1CE7E00FEB77E /* AMapSwift-Bridging-Header.h */,
 				E82166F51BFD7443002A9760 /* CommonUtils */,
@@ -245,6 +267,7 @@
 		E8D41CDE1BEFA17500E07BAD /* Circle */ = {
 			isa = PBXGroup;
 			children = (
+				E8238B5D1C0EF5F20026B58C /* Domain */,
 				E8D41CDF1BEFA1BE00E07BAD /* CircleTableViewController.swift */,
 				E87BF5DC1BF47ECC009C993A /* CircleTableViewCell.swift */,
 				E87BF5DE1BF481C5009C993A /* CircleNavigationViewControl.swift */,
@@ -379,9 +402,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8238B641C0F0A9A0026B58C /* HttpRequestConstant.swift in Sources */,
 				E80B97FB1BFC4D4600E38A89 /* DoubleExtension.swift in Sources */,
 				E854D8541BEDE427003FEAEB /* AppDelegate.swift in Sources */,
 				E87BF5DD1BF47ECC009C993A /* CircleTableViewCell.swift in Sources */,
+				E8238B5F1C0EF62C0026B58C /* CircleTableViewCellDomain.swift in Sources */,
 				E80B97E21BFB417A00E38A89 /* SportRecordingViewControl.swift in Sources */,
 				E8D41CE01BEFA1BE00E07BAD /* CircleTableViewController.swift in Sources */,
 				E80B97F71BFC246500E38A89 /* GlobalVariables.swift in Sources */,
