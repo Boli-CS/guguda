@@ -16,6 +16,10 @@
 		E82166F91BFD75C5002A9760 /* StopWatchStateEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82166F81BFD75C5002A9760 /* StopWatchStateEnum.swift */; };
 		E8238B5F1C0EF62C0026B58C /* CircleTableViewCellDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8238B5E1C0EF62C0026B58C /* CircleTableViewCellDomain.swift */; };
 		E8238B641C0F0A9A0026B58C /* HttpRequestConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8238B631C0F0A9A0026B58C /* HttpRequestConstant.swift */; };
+		E8238B661C16858F0026B58C /* CommonInteractionWithServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8238B651C16858F0026B58C /* CommonInteractionWithServer.swift */; };
+		E8238B681C16ECAC0026B58C /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8238B671C16ECAC0026B58C /* FileUtils.swift */; };
+		E8238B6A1C16EE760026B58C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8238B691C16EE760026B58C /* StringExtension.swift */; };
+		E8238B6D1C1722D80026B58C /* UpdateTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8238B6C1C1722D80026B58C /* UpdateTableViewDelegate.swift */; };
 		E854D8541BEDE427003FEAEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E854D8531BEDE427003FEAEB /* AppDelegate.swift */; };
 		E854D85B1BEDE427003FEAEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E854D8591BEDE427003FEAEB /* Main.storyboard */; };
 		E854D85D1BEDE427003FEAEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E854D85C1BEDE427003FEAEB /* Assets.xcassets */; };
@@ -55,6 +59,10 @@
 		E82166F81BFD75C5002A9760 /* StopWatchStateEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopWatchStateEnum.swift; sourceTree = "<group>"; };
 		E8238B5E1C0EF62C0026B58C /* CircleTableViewCellDomain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CircleTableViewCellDomain.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E8238B631C0F0A9A0026B58C /* HttpRequestConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequestConstant.swift; sourceTree = "<group>"; };
+		E8238B651C16858F0026B58C /* CommonInteractionWithServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonInteractionWithServer.swift; sourceTree = "<group>"; };
+		E8238B671C16ECAC0026B58C /* FileUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
+		E8238B691C16EE760026B58C /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		E8238B6C1C1722D80026B58C /* UpdateTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTableViewDelegate.swift; sourceTree = "<group>"; };
 		E854D8501BEDE427003FEAEB /* GuGuDa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuGuDa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E854D8531BEDE427003FEAEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E854D85A1BEDE427003FEAEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -149,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				E80B97FA1BFC4D4600E38A89 /* DoubleExtension.swift */,
+				E8238B691C16EE760026B58C /* StringExtension.swift */,
 			);
 			name = Extension;
 			path = GuGuDa/Extension;
@@ -159,6 +168,8 @@
 			children = (
 				E82166F61BFD74A9002A9760 /* StopWatch.swift */,
 				E82166F81BFD75C5002A9760 /* StopWatchStateEnum.swift */,
+				E8238B651C16858F0026B58C /* CommonInteractionWithServer.swift */,
+				E8238B671C16ECAC0026B58C /* FileUtils.swift */,
 			);
 			name = CommonUtils;
 			path = GuGuDa/CommonUtils;
@@ -181,13 +192,23 @@
 			path = GuGuDa/GlobalData;
 			sourceTree = "<group>";
 		};
+		E8238B6B1C1722300026B58C /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				E8238B6C1C1722D80026B58C /* UpdateTableViewDelegate.swift */,
+			);
+			name = Protocol;
+			path = GuGuDa/Protocol;
+			sourceTree = "<group>";
+		};
 		E854D8471BEDE427003FEAEB = {
 			isa = PBXGroup;
 			children = (
-				E8238B611C0F0A420026B58C /* GlobalData */,
 				E8F8EE9F1BF2433E00FEB77E /* AMap.bundle */,
 				E8F8EE901BF1CE7E00FEB77E /* AMapSwift-Bridging-Header.h */,
+				E8238B611C0F0A420026B58C /* GlobalData */,
 				E82166F51BFD7443002A9760 /* CommonUtils */,
+				E8238B6B1C1722300026B58C /* Protocol */,
 				E80B97F81BFC4CF700E38A89 /* Extension */,
 				E8C552261BF1953200E4C56B /* Sport */,
 				E8C552251BF1951B00E4C56B /* Mine */,
@@ -402,6 +423,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8238B661C16858F0026B58C /* CommonInteractionWithServer.swift in Sources */,
 				E8238B641C0F0A9A0026B58C /* HttpRequestConstant.swift in Sources */,
 				E80B97FB1BFC4D4600E38A89 /* DoubleExtension.swift in Sources */,
 				E854D8541BEDE427003FEAEB /* AppDelegate.swift in Sources */,
@@ -413,6 +435,7 @@
 				E8C552281BF195B600E4C56B /* MessageTableViewController.swift in Sources */,
 				E82166F71BFD74A9002A9760 /* StopWatch.swift in Sources */,
 				E8C552231BF0E7AB00E4C56B /* FindTableViewController.swift in Sources */,
+				E8238B681C16ECAC0026B58C /* FileUtils.swift in Sources */,
 				E8C5522A1BF1961000E4C56B /* MineViewController.swift in Sources */,
 				E82166F91BFD75C5002A9760 /* StopWatchStateEnum.swift in Sources */,
 				E87BF5DF1BF481C5009C993A /* CircleNavigationViewControl.swift in Sources */,
@@ -420,7 +443,9 @@
 				E8C5522C1BF1968600E4C56B /* SportViewController.swift in Sources */,
 				E87BF5D91BF472FD009C993A /* MessageTableViewCell.swift in Sources */,
 				E87BF5DB1BF47352009C993A /* MessageNavigationViewControl.swift in Sources */,
+				E8238B6A1C16EE760026B58C /* StringExtension.swift in Sources */,
 				E87BF5D71BF46C7C009C993A /* FindNavigationViewControl.swift in Sources */,
+				E8238B6D1C1722D80026B58C /* UpdateTableViewDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

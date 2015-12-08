@@ -49,3 +49,13 @@ CIRCLE_NAVIGATION_BAR_NEARBY="附近";
  *  运动圈界面
  */
 CIRCLE_NAVIGATION_BAR_SQUARE="广场";
+
+/**
+ *  运动圈网络连接失败Title
+ */
+CIRCLE_NETWORK_CONNECT_FIAL_ALERT_TITLE="错误";
+
+/**
+ *  运动圈网络连接失败message
+ */
+CIRCLE_NETWORK_CONNECT_FIAL_ALERT_MESSAGE="网络连接错误，请检查您的网络连接";

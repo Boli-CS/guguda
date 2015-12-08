@@ -12,7 +12,7 @@ import Alamofire
 import SwiftyJSON
 
 /// "运动圈"主界面
-class CircleTableViewController: UITableViewController {
+class CircleTableViewController: UITableViewController,AllowReloadTableView {
 
     @IBOutlet var circleTable_tableView: UITableView!
  
@@ -23,9 +23,18 @@ class CircleTableViewController: UITableViewController {
     var customNavigationItemView : UIView?
     var circleTableViewDataModel = [CircleTableViewCellDomain]()
     
+    let defaultFileManage = NSFileManager.defaultManager()
+    var cachePath : NSURL?
+    
     override func viewDidLoad() {
+        cachePath = defaultFileManage.URLsForDirectory(NSSearchPathDirectory.CachesDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask)[0]
+        
         initNavigationBarTitleButton()
         getTableViewDataFromServer()
+    }
+    
+    func reloadTableView() {
+        self.circleTable_tableView.reloadData()
     }
     
     /**
@@ -80,23 +89,30 @@ class CircleTableViewController: UITableViewController {
     
     func getTableViewDataFromServer() {
         print("enter CircleTableViewControl.getTableViewDataFromServer")
-        Alamofire.request(.GET, GET_CIRCLE_TRENDS_TABLE_CELLS)
+        Alamofire.request(.GET, GET_CIRCLE_TRENDS_TABLE_CELLS, parameters:["type" : "1"])
             .responseJSON { response in
-//                print(response.request)  // original URL request
-//                print(response.response) // URL response
-//                print(response.data)     // server data
-//                print(response.result)   // result of response serialization
-                let circleCellJson = JSON(response.result.value!)
-                for (_,subJson):(String, JSON) in circleCellJson {
-                    let circleTableViewCellDomain = CircleTableViewCellDomain()
-                    circleTableViewCellDomain.userName = subJson["userName"].string
-                    circleTableViewCellDomain.sportDays = subJson["sportDays"].string
-                    circleTableViewCellDomain.postDate = subJson["postDate"].string
-                    circleTableViewCellDomain.postLocation = subJson["postLocation"].string
-                    circleTableViewCellDomain.postContent = subJson["postContent"].string
-                    self.circleTableViewDataModel.append(circleTableViewCellDomain)
+                if response.result.value != nil {
+                    let circleCellJson = JSON(response.result.value!)
+                    print("从服务器获取到数据")
+                    for (_,subJson):(String, JSON) in circleCellJson {
+                        let circleTableViewCellDomain = CircleTableViewCellDomain()
+                        circleTableViewCellDomain.userID = subJson["userID"].int
+                        circleTableViewCellDomain.userName = subJson["userName"].string
+                        circleTableViewCellDomain.sportDays = subJson["sportDays"].string
+                        circleTableViewCellDomain.postDate = subJson["postDate"].string
+                        circleTableViewCellDomain.postLocation = subJson["postLocation"].string
+                        circleTableViewCellDomain.postContent = subJson["postContent"].string
+                        circleTableViewCellDomain.headPortrait = subJson["headPortrait"].string
+                        self.circleTableViewDataModel.append(circleTableViewCellDomain)
+                    }
+                    self.circleTable_tableView.reloadData()
                 }
-                self.circleTable_tableView.reloadData()
+                else {
+                    let netFailAlert = UIAlertController(title: NSLocalizedString("CIRCLE_NETWORK_CONNECT_FIAL_ALERT_TITLE", comment: "CIRCLE_NETWORK_CONNECT_FIAL_ALERT_TITLE"), message: NSLocalizedString("CIRCLE_NETWORK_CONNECT_FIAL_ALERT_MESSAGE", comment: "CIRCLE_NETWORK_CONNECT_FIAL_ALERT_MESSAGE"), preferredStyle: .Alert)
+                    netFailAlert.addAction(UIAlertAction(title: NSLocalizedString("ALERT_OK", comment: "OK"), style: .Default, handler: {(alertAction : UIAlertAction) in
+                        print("网络连接失败")}))
+                    self.presentViewController(netFailAlert, animated: true, completion: nil)
+                }
         }
     }
     
@@ -121,7 +137,18 @@ class CircleTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.circleTable_tableView.dequeueReusableCellWithIdentifier("CircleTableViewCell") as! CircleTableViewCell
-        cell.circleCell_headPortrait_imageView.image = UIImage(named: self.circleTableViewDataModel[indexPath.item].headPortrait!)
+    
+        if self.circleTableViewDataModel[indexPath.item].headPortrait != nil
+        && !defaultFileManage.fileExistsAtPath((cachePath?.URLByAppendingPathComponent(self.circleTableViewDataModel[indexPath.item].headPortrait!).path)!){
+            CommonInteractionWithServer.downloadHeadPortrait(self.circleTableViewDataModel[indexPath.item].headPortrait, tableViewtoReload: self)
+        }
+        else if self.circleTableViewDataModel[indexPath.item].headPortrait != nil{
+            cell.circleCell_headPortrait_imageView.image = UIImage(data: NSData(contentsOfURL: cachePath!.URLByAppendingPathComponent(self.circleTableViewDataModel[indexPath.item].headPortrait!))!)
+        }
+        else {
+            cell.circleCell_headPortrait_imageView.image = UIImage(named: "GuDongBa")
+        }
+
         cell.circleCell_userName_label.text = self.circleTableViewDataModel[indexPath.item].userName
         cell.circleCell_sportDays_label.text = "运动第" + self.circleTableViewDataModel[indexPath.item].sportDays! + "天"
         cell.circleCell_postDate_label.text = self.circleTableViewDataModel[indexPath.item].postDate

@@ -7,6 +7,8 @@
 //
 
 class CircleTableViewCellDomain {
+    var userID : Int?
+    
     var headPortrait : String?
     
     var userName : String?
@@ -22,7 +24,6 @@ class CircleTableViewCellDomain {
     var postContent : String?
  
     init() {
-        headPortrait = "GuDongBa.png"
         postPictures = ["GuDongBa.png"]
     }
 }

@@ -49,3 +49,13 @@ CIRCLE_NAVIGATION_BAR_NEARBY="NEARBY";
  *  运动圈界面
  */
 CIRCLE_NAVIGATION_BAR_SQUARE="SQUARE";
+
+/**
+ *  运动圈网络连接失败Title
+ */
+CIRCLE_NETWORK_CONNECT_FIAL_ALERT_TITLE="ERROR";
+
+/**
+ *  运动圈网络连接失败message
+ */
+CIRCLE_NETWORK_CONNECT_FIAL_ALERT_MESSAGE="Network Connection Failed, please check your network.";
