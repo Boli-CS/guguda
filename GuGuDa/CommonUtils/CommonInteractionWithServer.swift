@@ -14,7 +14,7 @@ class CommonInteractionWithServer {
     static let defaultFileManage = NSFileManager.defaultManager()
     
     static func downloadHeadPortrait(picturePathName : String!, tableViewtoReload : AllowReloadTableView!) -> Bool {
-        return downloadPictureFromServer("\(DOWNLOAD_PICTURE_FROM_SERVER)?filePath=\(picturePathName)", tableViewtoReload: tableViewtoReload)
+        return downloadPictureFromServer("\(DOWNLOAD_HEADPORTRAIT)?filePath=\(picturePathName)", tableViewtoReload: tableViewtoReload)
     }
     
     static func downloadPictureFromServer(url : String!, tableViewtoReload : AllowReloadTableView!) -> Bool {

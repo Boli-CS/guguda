@@ -20,6 +20,9 @@
 		E8238B681C16ECAC0026B58C /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8238B671C16ECAC0026B58C /* FileUtils.swift */; };
 		E8238B6A1C16EE760026B58C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8238B691C16EE760026B58C /* StringExtension.swift */; };
 		E8238B6D1C1722D80026B58C /* UpdateTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8238B6C1C1722D80026B58C /* UpdateTableViewDelegate.swift */; };
+		E8238B701C1AA70C0026B58C /* SportRecordDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8238B6F1C1AA70C0026B58C /* SportRecordDomain.swift */; };
+		E8238B721C1AB1250026B58C /* SwiftyJsonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8238B711C1AB1250026B58C /* SwiftyJsonUtils.swift */; };
+		E8238B761C1AC49B0026B58C /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8238B751C1AC49B0026B58C /* DateUtils.swift */; };
 		E854D8541BEDE427003FEAEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E854D8531BEDE427003FEAEB /* AppDelegate.swift */; };
 		E854D85B1BEDE427003FEAEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E854D8591BEDE427003FEAEB /* Main.storyboard */; };
 		E854D85D1BEDE427003FEAEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E854D85C1BEDE427003FEAEB /* Assets.xcassets */; };
@@ -63,6 +66,9 @@
 		E8238B671C16ECAC0026B58C /* FileUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
 		E8238B691C16EE760026B58C /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		E8238B6C1C1722D80026B58C /* UpdateTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTableViewDelegate.swift; sourceTree = "<group>"; };
+		E8238B6F1C1AA70C0026B58C /* SportRecordDomain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportRecordDomain.swift; sourceTree = "<group>"; };
+		E8238B711C1AB1250026B58C /* SwiftyJsonUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJsonUtils.swift; sourceTree = "<group>"; };
+		E8238B751C1AC49B0026B58C /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		E854D8501BEDE427003FEAEB /* GuGuDa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuGuDa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E854D8531BEDE427003FEAEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E854D85A1BEDE427003FEAEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -170,6 +176,8 @@
 				E82166F81BFD75C5002A9760 /* StopWatchStateEnum.swift */,
 				E8238B651C16858F0026B58C /* CommonInteractionWithServer.swift */,
 				E8238B671C16ECAC0026B58C /* FileUtils.swift */,
+				E8238B711C1AB1250026B58C /* SwiftyJsonUtils.swift */,
+				E8238B751C1AC49B0026B58C /* DateUtils.swift */,
 			);
 			name = CommonUtils;
 			path = GuGuDa/CommonUtils;
@@ -199,6 +207,14 @@
 			);
 			name = Protocol;
 			path = GuGuDa/Protocol;
+			sourceTree = "<group>";
+		};
+		E8238B6E1C1AA6CD0026B58C /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				E8238B6F1C1AA70C0026B58C /* SportRecordDomain.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		E854D8471BEDE427003FEAEB = {
@@ -278,6 +294,7 @@
 		E8C552261BF1953200E4C56B /* Sport */ = {
 			isa = PBXGroup;
 			children = (
+				E8238B6E1C1AA6CD0026B58C /* Domain */,
 				E8C5522B1BF1968600E4C56B /* SportViewController.swift */,
 				E80B97E11BFB417A00E38A89 /* SportRecordingViewControl.swift */,
 			);
@@ -426,12 +443,14 @@
 				E8238B661C16858F0026B58C /* CommonInteractionWithServer.swift in Sources */,
 				E8238B641C0F0A9A0026B58C /* HttpRequestConstant.swift in Sources */,
 				E80B97FB1BFC4D4600E38A89 /* DoubleExtension.swift in Sources */,
+				E8238B761C1AC49B0026B58C /* DateUtils.swift in Sources */,
 				E854D8541BEDE427003FEAEB /* AppDelegate.swift in Sources */,
 				E87BF5DD1BF47ECC009C993A /* CircleTableViewCell.swift in Sources */,
 				E8238B5F1C0EF62C0026B58C /* CircleTableViewCellDomain.swift in Sources */,
 				E80B97E21BFB417A00E38A89 /* SportRecordingViewControl.swift in Sources */,
 				E8D41CE01BEFA1BE00E07BAD /* CircleTableViewController.swift in Sources */,
 				E80B97F71BFC246500E38A89 /* GlobalVariables.swift in Sources */,
+				E8238B701C1AA70C0026B58C /* SportRecordDomain.swift in Sources */,
 				E8C552281BF195B600E4C56B /* MessageTableViewController.swift in Sources */,
 				E82166F71BFD74A9002A9760 /* StopWatch.swift in Sources */,
 				E8C552231BF0E7AB00E4C56B /* FindTableViewController.swift in Sources */,
@@ -444,6 +463,7 @@
 				E87BF5D91BF472FD009C993A /* MessageTableViewCell.swift in Sources */,
 				E87BF5DB1BF47352009C993A /* MessageNavigationViewControl.swift in Sources */,
 				E8238B6A1C16EE760026B58C /* StringExtension.swift in Sources */,
+				E8238B721C1AB1250026B58C /* SwiftyJsonUtils.swift in Sources */,
 				E87BF5D71BF46C7C009C993A /* FindNavigationViewControl.swift in Sources */,
 				E8238B6D1C1722D80026B58C /* UpdateTableViewDelegate.swift in Sources */,
 			);

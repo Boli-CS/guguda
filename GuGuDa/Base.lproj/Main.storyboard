@@ -388,6 +388,9 @@
                                             <constraint firstAttribute="width" constant="50" id="mcM-sq-Wwb"/>
                                         </constraints>
                                         <state key="normal" title="完成"/>
+                                        <connections>
+                                            <action selector="sportRecording_finishButton_clickUp:" destination="Tsh-jn-yYQ" eventType="touchUpInside" id="61E-4B-kqH"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RW4-UJ-oo7">
                                         <rect key="frame" x="229" y="8" width="50" height="50"/>

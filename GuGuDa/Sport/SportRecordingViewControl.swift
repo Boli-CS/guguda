@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Darwin
+import Alamofire
 
 class SportRecordingViewControl: UIViewController, MAMapViewDelegate, AMapLocationManagerDelegate {
     
@@ -209,7 +210,7 @@ class SportRecordingViewControl: UIViewController, MAMapViewDelegate, AMapLocati
     }
     
     @IBAction func dragToPauseButtonDrag(sender: AnyObject, forEvent event: UIEvent) {
-//        print("下拉暂停按钮被拖拽")
+        print("下拉暂停按钮被拖拽")
         let button = sender as! UIButton
         let touchs = event.touchesForView(button)
         var touch : UITouch?
@@ -244,5 +245,13 @@ class SportRecordingViewControl: UIViewController, MAMapViewDelegate, AMapLocati
         sportRecording_continueAndFinishButtonSuperView_view.center.y = continueAndFinishSuperViewOriginalPosition!.y
         self.stopWatch.resume()
         self.locationManager?.startUpdatingLocation()
+    }
+    
+    @IBAction func sportRecording_finishButton_clickUp(sender: AnyObject) {
+        print("结束运动")
+        let records : [(latitude : Double, longitude : Double)] = [(1.0,2.0),(3.0,4.0)]
+        let sportRecord = SportRecordDomain(userID: 1, location: "shenzhen", records: records)
+        let postData = SwiftyJsonUtils.convertPlainObjectToStringDic(reflecting: sportRecord)
+        Alamofire.request(.POST, POST_SPORT_RECORD, parameters: postData, encoding: .JSON)
     }
 }
