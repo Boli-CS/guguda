@@ -200,8 +200,28 @@ class CircleTableViewController: UITableViewController,AllowReloadTableView {
     }
     
     @IBAction func circleTabel_takePhotos_click(sender: AnyObject) {
-        print("运动圈界面照相被点击")
+        let directoryURL = self.defaultFileManage.URLsForDirectory(.CachesDirectory, inDomains: .UserDomainMask)[0]
+        let pathComponent = "1.png"
+        let dic = directoryURL.URLByAppendingPathComponent(pathComponent)
+//        Alamofire.upload(.POST, "http://localhost:8080/GuGuDa/circle/upload", file: dic)
+        Alamofire.upload(
+            .POST,
+            "http://localhost:8080/GuGuDa/circle/upload",
+            multipartFormData: { multipartFormData in
+                multipartFormData.appendBodyPart(fileURL: dic, name: "1.png")
+//                multipartFormData.appendBodyPart(fileURL: rainbowImageURL, name: "rainbow")
+            },
+            encodingCompletion: { encodingResult in
+                switch encodingResult {
+                case .Success(let upload, _, _):
+                    upload.responseJSON { response in
+                        debugPrint(response)
+                    }
+                case .Failure(let encodingError):
+                    print(encodingError)
+                }
+            }
+        )
     }
-    
     
 }
