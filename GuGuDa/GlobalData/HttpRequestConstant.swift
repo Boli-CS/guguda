@@ -18,3 +18,6 @@ let DOWNLOAD_HEADPORTRAIT = ROOT_URL + "/download/userHeadPortrait"
 
  /// 上传运动记录
 let POST_SPORT_RECORD = ROOT_URL + "/updateSportRecord"
+
+ /// 上传新的运动圈记录
+let POST_NEW_CIRCLE = ROOT_URL + "/circle/upload"

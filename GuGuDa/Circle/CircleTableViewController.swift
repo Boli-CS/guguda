@@ -206,7 +206,7 @@ class CircleTableViewController: UITableViewController,AllowReloadTableView {
 //        Alamofire.upload(.POST, "http://localhost:8080/GuGuDa/circle/upload", file: dic)
         Alamofire.upload(
             .POST,
-            "http://localhost:8080/GuGuDa/circle/upload",
+            POST_NEW_CIRCLE,
             multipartFormData: { multipartFormData in
                 multipartFormData.appendBodyPart(fileURL: dic, name: "1.png")
 //                multipartFormData.appendBodyPart(fileURL: rainbowImageURL, name: "rainbow")
