@@ -19,9 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /**
         高德地图API所需要的key
         */
-        print("设置高德地图API KEY")
-        AMapLocationServices.sharedServices().apiKey = "afccfdd34377ee5feb883d6abaf83e57"
-        MAMapServices.sharedServices().apiKey = "afccfdd34377ee5feb883d6abaf83e57"
+//        print("设置高德地图API KEY")
+        AMapLocationServices.sharedServices().apiKey = AMapServiceApiKey
+        MAMapServices.sharedServices().apiKey = AMapServiceApiKey
+        AMapSearchServices.sharedServices().apiKey = AMapServiceApiKey
         return true
     }
 

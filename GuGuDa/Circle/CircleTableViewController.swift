@@ -12,7 +12,11 @@ import Alamofire
 import SwiftyJSON
 
 /// "运动圈"主界面
-class CircleTableViewController: UITableViewController,AllowReloadTableView {
+class CircleTableViewController:
+    UITableViewController,
+    UIImagePickerControllerDelegate,
+    UINavigationControllerDelegate,
+    AllowReloadTableView {
 
     @IBOutlet var circleTable_tableView: UITableView!
  
@@ -23,8 +27,10 @@ class CircleTableViewController: UITableViewController,AllowReloadTableView {
     var customNavigationItemView : UIView?
     var circleTableViewDataModel = [CircleTableViewCellDomain]()
     
-    let defaultFileManage = NSFileManager.defaultManager()
     var cachePath : NSURL?
+    
+    /// 上传新circle
+    var imagePicker : UIImagePickerController!
     
     override func viewDidLoad() {
         cachePath = defaultFileManage.URLsForDirectory(NSSearchPathDirectory.CachesDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask)[0]
@@ -46,7 +52,7 @@ class CircleTableViewController: UITableViewController,AllowReloadTableView {
         customNavigationItemView = UIView()
         
         let trendbutton : UIButton = UIButton(type: .Custom)
-        var originalString: String = NSLocalizedString("CIRCLE_NAVIGATION_BAR_TRENDS", comment: "CIRCLE_NAVIGATION_BAR_TRENDS")
+        var originalString: String = CommonUtils.GetLocalizationText("CIRCLE_NAVIGATION_BAR_TRENDS")
         var myString: NSString = originalString as NSString
         var trendSize: CGSize = myString.sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(14.0)])
         trendSize.width = trendSize.width * 1.5
@@ -54,7 +60,7 @@ class CircleTableViewController: UITableViewController,AllowReloadTableView {
         trendbutton.setTitleColor(UIColor.blackColor(), forState: .Normal)
         
         let nearbybutton : UIButton = UIButton(type: .Custom)
-        originalString = NSLocalizedString("CIRCLE_NAVIGATION_BAR_NEARBY", comment: "CIRCLE_NAVIGATION_BAR_NEARBY")
+        originalString = CommonUtils.GetLocalizationText("CIRCLE_NAVIGATION_BAR_NEARBY")
         myString = originalString as NSString
         var nearbySize = myString.sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(14.0)])
         nearbySize.width = nearbySize.width * 1.5
@@ -63,7 +69,7 @@ class CircleTableViewController: UITableViewController,AllowReloadTableView {
         nearbybutton.setTitleColor(UIColor.blackColor(), forState: .Normal)
         
         let squarebutton : UIButton = UIButton(type: .Custom)
-        originalString = NSLocalizedString("CIRCLE_NAVIGATION_BAR_SQUARE", comment: "CIRCLE_NAVIGATION_BAR_SQUARE")
+        originalString = CommonUtils.GetLocalizationText("CIRCLE_NAVIGATION_BAR_SQUARE")
         myString = originalString as NSString
         var squareSize = myString.sizeWithAttributes([NSFontAttributeName: UIFont.systemFontOfSize(14.0)])
         squareSize.width = squareSize.width * 1.5
@@ -108,7 +114,8 @@ class CircleTableViewController: UITableViewController,AllowReloadTableView {
                     self.circleTable_tableView.reloadData()
                 }
                 else {
-                    let netFailAlert = UIAlertController(title: NSLocalizedString("CIRCLE_NETWORK_CONNECT_FIAL_ALERT_TITLE", comment: "CIRCLE_NETWORK_CONNECT_FIAL_ALERT_TITLE"), message: NSLocalizedString("CIRCLE_NETWORK_CONNECT_FIAL_ALERT_MESSAGE", comment: "CIRCLE_NETWORK_CONNECT_FIAL_ALERT_MESSAGE"), preferredStyle: .Alert)
+                    let netFailAlert = UIAlertController(title: CommonUtils.GetLocalizationText("CIRCLE_NETWORK_CONNECT_FIAL_ALERT_TITLE"),
+                        message: CommonUtils.GetLocalizationText("CIRCLE_NETWORK_CONNECT_FIAL_ALERT_MESSAGE"), preferredStyle: .Alert)
                     netFailAlert.addAction(UIAlertAction(title: NSLocalizedString("ALERT_OK", comment: "OK"), style: .Default, handler: {(alertAction : UIAlertAction) in
                         print("网络连接失败")}))
                     self.presentViewController(netFailAlert, animated: true, completion: nil)
@@ -200,28 +207,71 @@ class CircleTableViewController: UITableViewController,AllowReloadTableView {
     }
     
     @IBAction func circleTabel_takePhotos_click(sender: AnyObject) {
-        let directoryURL = self.defaultFileManage.URLsForDirectory(.CachesDirectory, inDomains: .UserDomainMask)[0]
-        let pathComponent = "1.png"
-        let dic = directoryURL.URLByAppendingPathComponent(pathComponent)
-//        Alamofire.upload(.POST, "http://localhost:8080/GuGuDa/circle/upload", file: dic)
-        Alamofire.upload(
-            .POST,
-            POST_NEW_CIRCLE,
-            multipartFormData: { multipartFormData in
-                multipartFormData.appendBodyPart(fileURL: dic, name: "1.png")
-//                multipartFormData.appendBodyPart(fileURL: rainbowImageURL, name: "rainbow")
-            },
-            encodingCompletion: { encodingResult in
-                switch encodingResult {
-                case .Success(let upload, _, _):
-                    upload.responseJSON { response in
-                        debugPrint(response)
-                    }
-                case .Failure(let encodingError):
-                    print(encodingError)
-                }
-            }
-        )
+        let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        let takePhoto = UIAlertAction(title: CommonUtils.GetLocalizationText("CIRCLE_POST_NEW_CIRCLE_TAKE_PHOTO"),
+            style: .Default,
+            handler: {
+                (alert : UIAlertAction!) -> Void in
+                self.takeNewPhoto()
+        })
+        
+        let chooseFromLibrary = UIAlertAction(title: CommonUtils.GetLocalizationText("CIRCLE_POST_NEW_CIRCLE_CHOOSE_FROM_LIBRARY"),
+            style: .Default,
+            handler: {
+                (alert : UIAlertAction!) -> Void in
+                self.chooseFromLibrary()
+        })
+        
+        let cancle = UIAlertAction(title: CommonUtils.GetLocalizationText("ALERT_CANCLE"),
+            style: .Cancel,
+            handler: {
+                (alert : UIAlertAction!) -> Void in
+                print("cancle")
+        })
+        
+        optionMenu.addAction(takePhoto)
+        optionMenu.addAction(chooseFromLibrary)
+        optionMenu.addAction(cancle)
+        
+        self.presentViewController(optionMenu, animated: true, completion: nil)
+    }
+    
+    /**
+     选择使用拍照上传新的circle
+     */
+    private func takeNewPhoto() -> Void {
+        imagePicker =  UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .Camera
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    /**
+     选择使用图片库中的照片上新的circle
+     */
+    private func chooseFromLibrary() -> Void {
+        let destinationVC = storyboard?.instantiateViewControllerWithIdentifier("PostCircleViewControl") as! PostCircleViewControl
+        
+        self.navigationController?.pushViewController(destinationVC, animated: true)
+    }
+    /**
+     拍照结束并且使用该照片
+     
+     - parameter picker:
+     - parameter info:
+     */
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        imagePicker.dismissViewControllerAnimated(true, completion: nil)
+        let destinationVC = storyboard?.instantiateViewControllerWithIdentifier("PostCircleViewControl") as! PostCircleViewControl
+        destinationVC.choosedImage = info[UIImagePickerControllerOriginalImage] as? UIImage
+
+        let directoryURL = defaultFileManage.URLsForDirectory(.CachesDirectory, inDomains: .UserDomainMask)[0]
+        let fileNSURL = directoryURL.URLByAppendingPathComponent("a.png")
+        let data = UIImagePNGRepresentation(destinationVC.choosedImage!)
+        data!.writeToFile(String(fileNSURL), atomically: true)
+        
+        destinationVC.choosedImageUrl = fileNSURL
+        self.navigationController?.pushViewController(destinationVC, animated: true)
     }
     
 }

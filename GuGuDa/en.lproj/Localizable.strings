@@ -11,6 +11,16 @@
 ALERT_OK="OK";
 
 /**
+ *  弹出框确认按钮
+ */
+ALERT_CANCLE="Cancle";
+
+/**
+ *  获取不到本地化字符串
+ */
+CAN_NOT_FIND_LOCALIZATION_TEXT="Failed To Localize";
+
+/**
  *  定位失败弹出框的标题
  */
 LOCATION_FAIL_ALERT_TITLE="Location Failed";
@@ -59,3 +69,18 @@ CIRCLE_NETWORK_CONNECT_FIAL_ALERT_TITLE="ERROR";
  *  运动圈网络连接失败message
  */
 CIRCLE_NETWORK_CONNECT_FIAL_ALERT_MESSAGE="Network Connection Failed, please check your network.";
+
+/**
+ *  运动圈上传新状态选择拍照
+ */
+CIRCLE_POST_NEW_CIRCLE_TAKE_PHOTO="Take New Photo";
+
+/**
+ *  运动圈上传新状态从图库中选择
+ */
+CIRCLE_POST_NEW_CIRCLE_CHOOSE_FROM_LIBRARY="Choose From Library";
+
+/**
+ *  上传新运动圈的文字提示信息
+ */
+POST_NEW_CIRCLE_TEXT_TO_POST_PLACE_HOLDER="Please Input The Text To Post";

@@ -23,6 +23,8 @@
 		E8238B701C1AA70C0026B58C /* SportRecordDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8238B6F1C1AA70C0026B58C /* SportRecordDomain.swift */; };
 		E8238B721C1AB1250026B58C /* SwiftyJsonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8238B711C1AB1250026B58C /* SwiftyJsonUtils.swift */; };
 		E8238B761C1AC49B0026B58C /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8238B751C1AC49B0026B58C /* DateUtils.swift */; };
+		E82E95421C26B7DD002F81C9 /* PostCircleViewControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82E95411C26B7DD002F81C9 /* PostCircleViewControl.swift */; };
+		E82E95441C28451A002F81C9 /* OtherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82E95431C28451A002F81C9 /* OtherData.swift */; };
 		E854D8541BEDE427003FEAEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E854D8531BEDE427003FEAEB /* AppDelegate.swift */; };
 		E854D85B1BEDE427003FEAEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E854D8591BEDE427003FEAEB /* Main.storyboard */; };
 		E854D85D1BEDE427003FEAEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E854D85C1BEDE427003FEAEB /* Assets.xcassets */; };
@@ -32,6 +34,8 @@
 		E87BF5DB1BF47352009C993A /* MessageNavigationViewControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87BF5DA1BF47352009C993A /* MessageNavigationViewControl.swift */; };
 		E87BF5DD1BF47ECC009C993A /* CircleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87BF5DC1BF47ECC009C993A /* CircleTableViewCell.swift */; };
 		E87BF5DF1BF481C5009C993A /* CircleNavigationViewControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87BF5DE1BF481C5009C993A /* CircleNavigationViewControl.swift */; };
+		E87F10F31C265D9700086201 /* CommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87F10F21C265D9700086201 /* CommonUtils.swift */; };
+		E886D1DF1C284DEA00D03ADB /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E886D1DE1C284DEA00D03ADB /* AMapSearchKit.framework */; };
 		E8C552231BF0E7AB00E4C56B /* FindTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C552221BF0E7AB00E4C56B /* FindTableViewController.swift */; };
 		E8C552281BF195B600E4C56B /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C552271BF195B600E4C56B /* MessageTableViewController.swift */; };
 		E8C5522A1BF1961000E4C56B /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C552291BF1961000E4C56B /* MineViewController.swift */; };
@@ -69,6 +73,8 @@
 		E8238B6F1C1AA70C0026B58C /* SportRecordDomain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportRecordDomain.swift; sourceTree = "<group>"; };
 		E8238B711C1AB1250026B58C /* SwiftyJsonUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJsonUtils.swift; sourceTree = "<group>"; };
 		E8238B751C1AC49B0026B58C /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		E82E95411C26B7DD002F81C9 /* PostCircleViewControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCircleViewControl.swift; sourceTree = "<group>"; };
+		E82E95431C28451A002F81C9 /* OtherData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherData.swift; sourceTree = "<group>"; };
 		E854D8501BEDE427003FEAEB /* GuGuDa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuGuDa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E854D8531BEDE427003FEAEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E854D85A1BEDE427003FEAEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,6 +86,9 @@
 		E87BF5DA1BF47352009C993A /* MessageNavigationViewControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageNavigationViewControl.swift; sourceTree = "<group>"; };
 		E87BF5DC1BF47ECC009C993A /* CircleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CircleTableViewCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E87BF5DE1BF481C5009C993A /* CircleNavigationViewControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CircleNavigationViewControl.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		E87F10F21C265D9700086201 /* CommonUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtils.swift; sourceTree = "<group>"; };
+		E886D1DC1C284DBB00D03ADB /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMapSearchKit.framework; path = ../../../../Downloads/AMapSearchKit.framework; sourceTree = "<group>"; };
+		E886D1DE1C284DEA00D03ADB /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMapSearchKit.framework; path = AMap/AMapSearchKit.framework; sourceTree = "<group>"; };
 		E8C552221BF0E7AB00E4C56B /* FindTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindTableViewController.swift; sourceTree = "<group>"; };
 		E8C552271BF195B600E4C56B /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		E8C552291BF1961000E4C56B /* MineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E886D1DF1C284DEA00D03ADB /* AMapSearchKit.framework in Frameworks */,
 				E8F8EE9E1BF2409E00FEB77E /* libstdc++.6.0.9.tbd in Frameworks */,
 				E8F8EE9D1BF2408200FEB77E /* Security.framework in Frameworks */,
 				E8F8EE9B1BF1E7E200FEB77E /* MAMapKit.framework in Frameworks */,
@@ -129,6 +139,8 @@
 		34EC360B800075C1FBA14E5A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E886D1DE1C284DEA00D03ADB /* AMapSearchKit.framework */,
+				E886D1DC1C284DBB00D03ADB /* AMapSearchKit.framework */,
 				E8F8EE9C1BF2408200FEB77E /* Security.framework */,
 				E8F8EE9A1BF1E7E200FEB77E /* MAMapKit.framework */,
 				E8F8EE971BF1E60100FEB77E /* CoreLocation.framework */,
@@ -178,6 +190,7 @@
 				E8238B671C16ECAC0026B58C /* FileUtils.swift */,
 				E8238B711C1AB1250026B58C /* SwiftyJsonUtils.swift */,
 				E8238B751C1AC49B0026B58C /* DateUtils.swift */,
+				E87F10F21C265D9700086201 /* CommonUtils.swift */,
 			);
 			name = CommonUtils;
 			path = GuGuDa/CommonUtils;
@@ -195,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				E8238B631C0F0A9A0026B58C /* HttpRequestConstant.swift */,
+				E82E95431C28451A002F81C9 /* OtherData.swift */,
 			);
 			name = GlobalData;
 			path = GuGuDa/GlobalData;
@@ -309,6 +323,7 @@
 				E8D41CDF1BEFA1BE00E07BAD /* CircleTableViewController.swift */,
 				E87BF5DC1BF47ECC009C993A /* CircleTableViewCell.swift */,
 				E87BF5DE1BF481C5009C993A /* CircleNavigationViewControl.swift */,
+				E82E95411C26B7DD002F81C9 /* PostCircleViewControl.swift */,
 			);
 			name = Circle;
 			path = GuGuDa/Circle;
@@ -441,10 +456,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8238B661C16858F0026B58C /* CommonInteractionWithServer.swift in Sources */,
+				E82E95441C28451A002F81C9 /* OtherData.swift in Sources */,
 				E8238B641C0F0A9A0026B58C /* HttpRequestConstant.swift in Sources */,
+				E87F10F31C265D9700086201 /* CommonUtils.swift in Sources */,
 				E80B97FB1BFC4D4600E38A89 /* DoubleExtension.swift in Sources */,
 				E8238B761C1AC49B0026B58C /* DateUtils.swift in Sources */,
 				E854D8541BEDE427003FEAEB /* AppDelegate.swift in Sources */,
+				E82E95421C26B7DD002F81C9 /* PostCircleViewControl.swift in Sources */,
 				E87BF5DD1BF47ECC009C993A /* CircleTableViewCell.swift in Sources */,
 				E8238B5F1C0EF62C0026B58C /* CircleTableViewCellDomain.swift in Sources */,
 				E80B97E21BFB417A00E38A89 /* SportRecordingViewControl.swift in Sources */,
