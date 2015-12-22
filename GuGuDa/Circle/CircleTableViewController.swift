@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Alamofire
 import SwiftyJSON
+import DKImagePickerController
 
 /// "运动圈"主界面
 class CircleTableViewController:
@@ -250,10 +251,31 @@ class CircleTableViewController:
      选择使用图片库中的照片上新的circle
      */
     private func chooseFromLibrary() -> Void {
-        let destinationVC = storyboard?.instantiateViewControllerWithIdentifier("PostCircleViewControl") as! PostCircleViewControl
+        let pickerController = DKImagePickerController()
         
-        self.navigationController?.pushViewController(destinationVC, animated: true)
+        pickerController.didSelectAssets = { (assets: [DKAsset]) in
+            let destinationVC = self.storyboard?.instantiateViewControllerWithIdentifier("PostCircleViewControl") as! PostCircleViewControl
+            destinationVC.choosedImages = [UIImage]()
+            destinationVC.choosedImageUrls = [NSURL]()
+            for i in 0..<assets.count {
+                assets[i].fetchOriginalImageWithCompleteBlock({
+                    (image : UIImage?) -> Void in
+                    destinationVC.choosedImages?.append(image!)
+                    let directoryURL = defaultFileManage.URLsForDirectory(.CachesDirectory, inDomains: .UserDomainMask)[0]
+                    let fileNSURL = directoryURL.URLByAppendingPathComponent("\(i).png")
+                    let data = UIImagePNGRepresentation(destinationVC.choosedImages![0])
+                    data!.writeToURL(fileNSURL, atomically: true)
+                    destinationVC.choosedImageUrls?.append(fileNSURL)
+                })
+            }
+            
+            self.navigationController?.pushViewController(destinationVC, animated: true)
+        }
+        
+        self.presentViewController(pickerController, animated: true) {}
+        
     }
+    
     /**
      拍照结束并且使用该照片
      
@@ -263,14 +285,16 @@ class CircleTableViewController:
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
         let destinationVC = storyboard?.instantiateViewControllerWithIdentifier("PostCircleViewControl") as! PostCircleViewControl
-        destinationVC.choosedImage = info[UIImagePickerControllerOriginalImage] as? UIImage
+        destinationVC.choosedImages = [UIImage]()
+        destinationVC.choosedImages?.append(info[UIImagePickerControllerOriginalImage] as! UIImage)
 
         let directoryURL = defaultFileManage.URLsForDirectory(.CachesDirectory, inDomains: .UserDomainMask)[0]
         let fileNSURL = directoryURL.URLByAppendingPathComponent("a.png")
-        let data = UIImagePNGRepresentation(destinationVC.choosedImage!)
+        let data = UIImagePNGRepresentation(destinationVC.choosedImages![0])
         data!.writeToFile(String(fileNSURL), atomically: true)
         
-        destinationVC.choosedImageUrl = fileNSURL
+        destinationVC.choosedImageUrls = [NSURL]()
+        destinationVC.choosedImageUrls?.append(fileNSURL)
         self.navigationController?.pushViewController(destinationVC, animated: true)
     }
     

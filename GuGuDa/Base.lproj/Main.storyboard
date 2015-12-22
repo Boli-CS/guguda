@@ -322,44 +322,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n6R-j6-O1D">
-                                <rect key="frame" x="20" y="72" width="280" height="160"/>
+                                <rect key="frame" x="20" y="72" width="119" height="91"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="91" id="36a-1t-w7X"/>
+                                    <constraint firstAttribute="width" constant="119" id="7qb-Hm-eSe"/>
+                                </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cpe-3E-Mxy">
                                 <rect key="frame" x="20" y="240" width="280" height="137"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="137" id="t80-K0-wlC"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nnF-G1-eev">
                                 <rect key="frame" x="20" y="385" width="46" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="DA4-rd-37q"/>
+                                    <constraint firstAttribute="width" constant="46" id="qAe-6E-z1p"/>
                                 </constraints>
                                 <state key="normal" title="emoji"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1e-jg-ENf">
                                 <rect key="frame" x="222" y="385" width="78" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="78" id="gzt-vG-hc7"/>
+                                    <constraint firstAttribute="width" constant="78" id="5aV-sQ-RAc"/>
                                 </constraints>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J4j-hn-6Uz">
+                                <rect key="frame" x="147" y="72" width="119" height="91"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ohe-pD-1pM" firstAttribute="top" secondItem="nnF-G1-eev" secondAttribute="bottom" constant="104" id="1sa-pV-nSV"/>
-                            <constraint firstItem="nnF-G1-eev" firstAttribute="top" secondItem="m1e-jg-ENf" secondAttribute="top" id="2K5-hl-2VM"/>
-                            <constraint firstItem="cpe-3E-Mxy" firstAttribute="trailing" secondItem="n6R-j6-O1D" secondAttribute="trailing" id="3SD-Ks-epT"/>
-                            <constraint firstItem="nnF-G1-eev" firstAttribute="top" secondItem="cpe-3E-Mxy" secondAttribute="bottom" constant="8" symbolic="YES" id="AAH-Nc-zQV"/>
-                            <constraint firstItem="cpe-3E-Mxy" firstAttribute="top" secondItem="n6R-j6-O1D" secondAttribute="bottom" constant="8" symbolic="YES" id="PXT-9X-snb"/>
-                            <constraint firstItem="n6R-j6-O1D" firstAttribute="top" secondItem="8o9-r5-dXW" secondAttribute="bottom" constant="8" symbolic="YES" id="RM9-Zd-J2e"/>
-                            <constraint firstItem="nnF-G1-eev" firstAttribute="leading" secondItem="cpe-3E-Mxy" secondAttribute="leading" id="SpM-2P-J0h"/>
-                            <constraint firstItem="n6R-j6-O1D" firstAttribute="centerX" secondItem="j7D-IV-hL7" secondAttribute="centerX" id="XUv-V7-AvQ"/>
-                            <constraint firstItem="n6R-j6-O1D" firstAttribute="leading" secondItem="cpe-3E-Mxy" secondAttribute="leading" id="Ybp-jW-fml"/>
-                            <constraint firstItem="n6R-j6-O1D" firstAttribute="leading" secondItem="j7D-IV-hL7" secondAttribute="leadingMargin" constant="4" id="fBa-9r-ptp"/>
-                            <constraint firstItem="m1e-jg-ENf" firstAttribute="trailing" secondItem="cpe-3E-Mxy" secondAttribute="trailing" id="fdr-PH-TUA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="J4j-hn-6Uz" secondAttribute="trailing" constant="38" id="4TS-Lg-PD5"/>
+                            <constraint firstItem="J4j-hn-6Uz" firstAttribute="leading" secondItem="n6R-j6-O1D" secondAttribute="trailing" constant="8" symbolic="YES" id="4jz-ax-Oyd"/>
+                            <constraint firstItem="J4j-hn-6Uz" firstAttribute="top" secondItem="n6R-j6-O1D" secondAttribute="top" id="A4v-y1-fWC"/>
+                            <constraint firstItem="n6R-j6-O1D" firstAttribute="leading" secondItem="cpe-3E-Mxy" secondAttribute="leading" id="L4O-Va-Lvn"/>
+                            <constraint firstItem="n6R-j6-O1D" firstAttribute="leading" secondItem="j7D-IV-hL7" secondAttribute="leadingMargin" constant="4" id="MBM-sB-xAl"/>
+                            <constraint firstItem="cpe-3E-Mxy" firstAttribute="trailing" secondItem="m1e-jg-ENf" secondAttribute="trailing" id="NjU-gf-Y1r"/>
+                            <constraint firstItem="cpe-3E-Mxy" firstAttribute="centerX" secondItem="j7D-IV-hL7" secondAttribute="centerX" id="YJC-dA-kJR"/>
+                            <constraint firstItem="m1e-jg-ENf" firstAttribute="top" secondItem="nnF-G1-eev" secondAttribute="top" id="emc-9O-hT3"/>
+                            <constraint firstItem="cpe-3E-Mxy" firstAttribute="top" secondItem="n6R-j6-O1D" secondAttribute="bottom" constant="77" id="gAL-Ok-qHY"/>
+                            <constraint firstItem="n6R-j6-O1D" firstAttribute="top" secondItem="8o9-r5-dXW" secondAttribute="bottom" constant="8" symbolic="YES" id="juv-yJ-EPj"/>
+                            <constraint firstItem="n6R-j6-O1D" firstAttribute="bottom" secondItem="J4j-hn-6Uz" secondAttribute="bottom" id="sFh-Mo-3Pe"/>
+                            <constraint firstItem="cpe-3E-Mxy" firstAttribute="leading" secondItem="nnF-G1-eev" secondAttribute="leading" id="sm3-EH-eWw"/>
+                            <constraint firstItem="nnF-G1-eev" firstAttribute="top" secondItem="cpe-3E-Mxy" secondAttribute="bottom" constant="8" symbolic="YES" id="xqg-me-lQW"/>
+                            <constraint firstItem="ohe-pD-1pM" firstAttribute="top" secondItem="nnF-G1-eev" secondAttribute="bottom" constant="104" id="zeJ-BI-Js7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Jva-ys-x1J">
@@ -387,7 +394,8 @@
                     <connections>
                         <outlet property="cancle_button" destination="Abd-Ky-dsg" id="nWA-d5-tYN"/>
                         <outlet property="emoji_button" destination="nnF-G1-eev" id="dWP-ej-d2E"/>
-                        <outlet property="imagesToPost_ImageView" destination="n6R-j6-O1D" id="8EL-4I-Y1w"/>
+                        <outlet property="imagesToPost_ImageView1" destination="n6R-j6-O1D" id="x7b-wz-age"/>
+                        <outlet property="imagesToPost_ImageView2" destination="J4j-hn-6Uz" id="0sF-4O-ydt"/>
                         <outlet property="location_button" destination="m1e-jg-ENf" id="7v4-x7-fQy"/>
                         <outlet property="post_button" destination="knf-h9-DNn" id="4KS-v2-dpB"/>
                         <outlet property="textToPost_textView" destination="cpe-3E-Mxy" id="AUO-YJ-Xmk"/>

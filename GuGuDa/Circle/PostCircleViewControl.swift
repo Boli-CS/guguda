@@ -15,16 +15,18 @@ class PostCircleViewControl : UIViewController,
     UITextViewDelegate{
     
     /// 选择要上传的图片
-    var choosedImage : UIImage?
+    var choosedImages : [UIImage]?
     
     /// 要上传的图片的url
-    var choosedImageUrl : NSURL?
+    var choosedImageUrls : [NSURL]?
     
     @IBOutlet weak var cancle_button: UIButton!
     
     @IBOutlet weak var post_button: UIButton!
     
-    @IBOutlet weak var imagesToPost_ImageView: UIImageView!
+    @IBOutlet weak var imagesToPost_ImageView1: UIImageView!
+    
+    @IBOutlet weak var imagesToPost_ImageView2: UIImageView!
     
     @IBOutlet weak var textToPost_textView: UITextView!
     
@@ -40,8 +42,9 @@ class PostCircleViewControl : UIViewController,
     
     override func viewDidLoad() {
         print("viewDidLoad")
-        if(choosedImage != nil) {
-            imagesToPost_ImageView.image = choosedImage
+        if(choosedImages != nil) {
+            imagesToPost_ImageView1.image = choosedImages![0]
+            imagesToPost_ImageView2.image = choosedImages![1]
         }
         //获取位置信息
         initLocationInfo()
@@ -52,24 +55,30 @@ class PostCircleViewControl : UIViewController,
     }
     
     @IBAction func post_barButtonItem_click(sender: AnyObject) {
-        Alamofire.upload(
-            .POST,
-            POST_NEW_CIRCLE,
-            multipartFormData: { multipartFormData in
-                multipartFormData.appendBodyPart(fileURL: self.choosedImageUrl!, name: (self.choosedImageUrl?.lastPathComponent)!)
-                //                multipartFormData.appendBodyPart(fileURL: rainbowImageURL, name: "rainbow")
-            },
-            encodingCompletion: { encodingResult in
-                //                switch encodingResult {
-                //                case .Success(let upload, _, _):
-                //                    upload.responseJSON { response in
-                //                        debugPrint(response)
-                //                    }
-                //                case .Failure(let encodingError):
-                //                    print(encodingError)
-                //                }
-            }
-        )
+
+            Alamofire.upload(
+                .POST,
+                POST_NEW_CIRCLE,
+                multipartFormData: { multipartFormData in
+                    /**
+                    *  上传多张图片
+                    */
+                    for fileURL in self.choosedImageUrls! {
+                    multipartFormData.appendBodyPart(fileURL: fileURL,
+                        name: (fileURL.lastPathComponent)!)
+                    }
+                },
+                encodingCompletion: { encodingResult in
+                                    switch encodingResult {
+                                    case .Success(let upload, _, _):
+                                        upload.responseJSON { response in
+                                            debugPrint(response)
+                                        }
+                                    case .Failure(let encodingError):
+                                        print(encodingError)
+                                    }
+                }
+            )
     }
     
     @IBAction func cancle_barButtonItem_click(sender: AnyObject) {
